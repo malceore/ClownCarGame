@@ -1,6 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://rk6lwtint4ua"]
+[gd_scene load_steps=6 format=3 uid="uid://rk6lwtint4ua"]
 
 [ext_resource type="Script" path="res://MiniGame.gd" id="1_sjmgm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p7e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l82jl"]
 size = Vector2(41, 38)
@@ -11,6 +13,21 @@ size = Vector2(41, 38)
 
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_sjmgm")
+
+[node name="Destination" type="Area2D" parent="."]
+position = Vector2(77, 322)
+scale = Vector2(7.60802, 32.192)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Destination"]
+shape = SubResource("RectangleShape2D_q7p7e")
+
+[node name="SuccessColor" type="ColorRect" parent="Destination"]
+offset_left = -10.3838
+offset_top = -9.8161
+offset_right = 29.6162
+offset_bottom = 30.1839
+scale = Vector2(0.493148, 0.502471)
+color = Color(1, 0, 0, 1)
 
 [node name="Boot" type="RigidBody2D" parent="."]
 position = Vector2(567, 286)
@@ -29,25 +46,27 @@ offset_bottom = 20.0
 color = Color(0.172549, 1, 1, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
-self_modulate = Color(1, 0.682353, 1, 1)
+self_modulate = Color(0, 0.631373, 1, 1)
 show_behind_parent = true
 offset_right = 1147.0
 offset_bottom = 646.0
 texture = SubResource("CanvasTexture_clfpr")
 
-[node name="RigidBody2D" type="RigidBody2D" parent="."]
+[node name="Clown" type="RigidBody2D" parent="."]
 position = Vector2(749, 365)
 gravity_scale = 0.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Clown"]
 shape = SubResource("RectangleShape2D_4s1w1")
 
-[node name="TextureRect" type="ColorRect" parent="RigidBody2D"]
+[node name="TextureRect" type="ColorRect" parent="Clown"]
 offset_left = -19.0
 offset_top = -20.0
 offset_right = 21.0
 offset_bottom = 20.0
 color = Color(0.980392, 0, 0.45098, 1)
 
+[connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
+[connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
 [connection signal="mouse_entered" from="Boot" to="." method="_on_boot_mouse_entered"]
 [connection signal="mouse_exited" from="Boot" to="." method="_on_boot_mouse_exited"]
