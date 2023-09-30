@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dyfrjvxj54dp0"]
+[gd_scene load_steps=5 format=3 uid="uid://dyfrjvxj54dp0"]
 
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_7j6ie"]
 [ext_resource type="ArrayMesh" uid="uid://byssuhedsdsmb" path="res://models/untitled.obj" id="2_eybpu"]
+[ext_resource type="Texture2D" uid="uid://bscvp0k58lwyb" path="res://graphics/arrow.png" id="3_dyudl"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7uq41"]
 radius = 1.59526
@@ -16,6 +17,13 @@ mesh = ExtResource("2_eybpu")
 
 [node name="Camera3D" type="Camera3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 6)
+
+[node name="Offset" type="Node3D" parent="Mesh"]
+transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.70244, 0)
+
+[node name="Arrow" type="Sprite3D" parent="Mesh/Offset"]
+transform = Transform3D(0.0228618, -0.00814852, 0.999705, -0.999739, -0.000186339, 0.0228611, 0, -0.999967, -0.00815065, 0, 4.04653, 0)
+texture = ExtResource("3_dyudl")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 gravity_scale = 10.0
