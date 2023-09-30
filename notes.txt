@@ -12,6 +12,9 @@ Driving Game
 	\- UI shows remaining time and clowns.
 	3D world has buildings you have to drive around.
 	UI arrow that points at nearest clowns.	
+	Menu that popups up when you win or lose.
+   	    functions that make them different if you win or lose.
+
 
 Physics Game
 	Create a 2d area that is red, when you drag the 'clown' into the 2d area it turns green.
@@ -26,4 +29,5 @@ Content
 	Five different building types.
 	A circus tent
 	A tree
-	
+	Sound of car door
+	sound of seltzer
