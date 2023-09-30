@@ -1,0 +1,55 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnd672dosejcb"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_apyft"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_g765a"]
+
+[node name="Chain3D" type="Node3D"]
+
+[node name="link1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.33144, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="link1"]
+shape = SubResource("BoxShape3D_apyft")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="link1"]
+mesh = SubResource("BoxMesh_g765a")
+
+[node name="link2" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.808185, 1.11504, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="link2"]
+shape = SubResource("BoxShape3D_apyft")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="link2"]
+mesh = SubResource("BoxMesh_g765a")
+
+[node name="link3" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.99352, 1.23921, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="link3"]
+shape = SubResource("BoxShape3D_apyft")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="link3"]
+mesh = SubResource("BoxMesh_g765a")
+
+[node name="joint1" type="PinJoint3D" parent="."]
+node_a = NodePath("../link1")
+node_b = NodePath("../link2")
+
+[node name="joint2" type="PinJoint3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0183439, -0.0366873, 0)
+node_a = NodePath("../link2")
+node_b = NodePath("../link3")
+
+[node name="link4" type="RigidBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.1671, -1.64513)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="link4"]
+shape = SubResource("BoxShape3D_apyft")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="link4"]
+mesh = SubResource("BoxMesh_g765a")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.16892, 5)

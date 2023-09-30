@@ -42,5 +42,8 @@ func postSummary():
 	$UI/Summary/Breakdown.text += "\n    Time remaining " + str(floor($UI/DriveTimer/Timer.time_left))
 	$UI/Summary.visible = true
 	
-
-
+func _on_replay_button_pressed():
+	get_tree().reload_current_scene()
+	
+func _on_return_button_pressed():
+	get_tree().change_scene_to_file("res://scenes/main_menu.tscn")
