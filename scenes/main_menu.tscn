@@ -123,4 +123,7 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Level:"
 
+[connection signal="pressed" from="Menu/Level 1" to="." method="_on_level_1_pressed"]
+[connection signal="pressed" from="Menu/Level 2" to="." method="_on_level_2_pressed"]
+[connection signal="pressed" from="Menu/Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Menu/Difficulty" to="." method="_on_difficulty_pressed"]
