@@ -18,3 +18,12 @@ func _on_boot_mouse_entered():
 
 func _on_boot_mouse_exited():
 	mouseIsOver = false
+
+
+func _on_destination_body_entered(body):
+	if(body.name == "Clown"):
+		$Destination/SuccessColor.set_color(Color.GREEN)
+
+func _on_destination_body_exited(body):
+	if(body.name == "Clown"):
+		$Destination/SuccessColor.set_color(Color.RED)
