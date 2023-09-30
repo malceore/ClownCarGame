@@ -6,12 +6,13 @@ extends Node3D
 
 @export var turn_speed = 2
 @export var acceleration = 50
-
+@export var honkRange = 6
 var sphere_offset = Vector3(0, -1.0, 0)
 var steering = 21.0
 var turn_stop_limit = 0.75
 var speed_input = 0
 var rotate_input = 0
+
 
 func _ready():
 	ground_ray.add_exception(ball)
@@ -22,10 +23,14 @@ func _physics_process(_delta):
 	# Accelerate based on car's forward direction
 	ball.apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 	
+func _input(event):
+	if event.is_action_pressed("honk"):
+		for clown in get_parent().clowns:
+			if clown.position.distance_to(car_mesh.position) <= honkRange and clown.enabled:
+				print("You can cram!")
+				clown.disable()
+	
 func _process(delta):
-	# Can't steer/accelerate when in the air
-	if not ground_ray.is_colliding():
-		return
 	# Get accelerate/brake input
 	speed_input = 0
 	speed_input += Input.get_action_strength("accelerate")
