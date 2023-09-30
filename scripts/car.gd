@@ -46,3 +46,14 @@ func _process(delta):
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, rotate_input)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
+
+	handleArrow()
+		
+func handleArrow():
+	var closestClown = get_parent().clowns[0]
+	for clown in get_parent().clowns:
+		if clown.position.distance_to(car_mesh.position) <= closestClown.position.distance_to(car_mesh.position) and clown.enabled:
+			closestClown = clown
+	$Mesh/Offset.look_at(closestClown.position)
+	
+			
