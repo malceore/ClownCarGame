@@ -14,7 +14,7 @@ Driving Game
 	\- Menu that popups up when you win or lose.
    	    \- functions that make them different if you win or lose.
 	3D world has buildings you have to drive around.
-	Make main menu
+	\-Make main menu
 		can pick a level and difficulty.
 	Can replay levels when you lose or go back.
 
