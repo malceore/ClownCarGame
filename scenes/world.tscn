@@ -19,12 +19,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63056, 0)
 honkRange = 5
 
 [node name="Sun" type="OmniLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66458, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 30.9082, 0)
 light_color = Color(0.976471, 0.760784, 0.658824, 1)
-light_energy = 5.454
-light_indirect_energy = 1.095
+light_energy = 14.526
+light_indirect_energy = 5.714
 shadow_enabled = true
-omni_range = 29.5159
+omni_range = 148.486
 
 [node name="Ground" type="StaticBody3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38339, 0)
@@ -48,3 +48,11 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.2651, 1, 27.6881)
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DriveTimer" parent="UI" instance=ExtResource("4_5mw8l")]
+
+[node name="ClownCount" type="RichTextLabel" parent="UI"]
+offset_left = 899.0
+offset_top = 16.0
+offset_right = 1176.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Clowns  0/8"
