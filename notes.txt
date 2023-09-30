@@ -1,20 +1,17 @@
 TODO
 Create two mini game prototypes
-	One is a 3d driving games, Brandon will start that.
-	Warren will start on the physics game.
+    One is a 3d driving games, Brandon will start that.
+    Warren will start on the physics game.
 
 
 Driving Game
-	\-3d world has clowns.
-	\-When close enough you can cram clowns. Just console log for now and make clown disappear.
-	\-world has a list of clowns, get them all and logs that you win.
-	\-world has a timer that if it gets to zero you lose.	
-	\- UI shows remaining time and clowns.
+	3d world has clowns.
+	When close enough you can cram clowns. Just console log for now and make clown disappear.
+	world has a list of clowns, get them all and logs that you win.
+	world has a timer that if it gets to zero you lose.	
+	UI shows remaining time and clowns.
 	3D world has buildings you have to drive around.
 	UI arrow that points at nearest clowns.	
-	Menu that popups up when you win or lose.
-   	    functions that make them different if you win or lose.
-
 
 Physics Game
 	Create a 2d area that is red, when you drag the 'clown' into the 2d area it turns green.
@@ -26,8 +23,14 @@ Physics Game
 Content
 	Clown Car
 		yellow with polka dots and a tiny hat. 
-	Five different building types.
-	A circus tent
-	A tree
-	Sound of car door
-	sound of seltzer
+	Five different building types. x x x x x
+	A circus tent x 
+	A tree x
+	make them 256
+Sound:
+
+
+export as .obj
+
+3 Levels
+300x300 Meters

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://h01ttw0wy8e8"
+path="res://.godot/imported/hose speed this up.mp3-3f921314d17c6a11798e8b945d92d841.mp3str"
+
+[deps]
+
+source_file="res://sound/hose speed this up.mp3"
+dest_files=["res://.godot/imported/hose speed this up.mp3-3f921314d17c6a11798e8b945d92d841.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
