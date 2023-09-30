@@ -1,25 +1,43 @@
-extends CharacterBody2D
+extends Node3D
 
+@onready var ball = $RigidBody3D
+@onready var car_mesh = $Mesh
+@onready var ground_ray = $Mesh/RayCast3D
 
-const SPEED = 300.0
-const JUMP_VELOCITY = -400.0
+@export var turn_speed = 2
+@export var acceleration = 50
 
-# Get the gravity from the project settings to be synced with RigidBody nodes.
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var sphere_offset = Vector3(0, -1.0, 0)
+var steering = 21.0
+var turn_stop_limit = 0.75
+var speed_input = 0
+var rotate_input = 0
 
+func _ready():
+	ground_ray.add_exception(ball)
 
-func _physics_process(delta):
-
-	var direction = Input.get_axis("ui_left", "ui_right")
-	if direction:
-		velocity.x = direction * SPEED
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-		
-	direction = Input.get_axis("ui_up", "ui_down")
-	if direction:
-		velocity.y = direction * SPEED
-	else:
-		velocity.y = move_toward(velocity.x, 0, SPEED)
-		
-	move_and_slide()
+func _physics_process(_delta):
+	# Keep the car mesh aligned with the sphere
+	car_mesh.transform.origin = ball.transform.origin + sphere_offset
+	# Accelerate based on car's forward direction
+	ball.apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
+	
+func _process(delta):
+	# Can't steer/accelerate when in the air
+	if not ground_ray.is_colliding():
+		return
+	# Get accelerate/brake input
+	speed_input = 0
+	speed_input += Input.get_action_strength("accelerate")
+	speed_input -= Input.get_action_strength("reverse")
+	speed_input *= acceleration
+	# Get steering input
+	rotate_input = 0
+	rotate_input += Input.get_action_strength("turn_left")
+	rotate_input -= Input.get_action_strength("turn_right")
+	#rotate_input *= deg_2_rad(steering)
+	# rotate car mesh
+	if ball.linear_velocity.length() > turn_stop_limit:
+		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, rotate_input)
+		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
+		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()

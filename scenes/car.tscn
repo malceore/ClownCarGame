@@ -1,17 +1,25 @@
-[gd_scene load_steps=4 format=3 uid="uid://dwq660u34qwho"]
+[gd_scene load_steps=4 format=3 uid="uid://dyfrjvxj54dp0"]
 
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_7j6ie"]
-[ext_resource type="Texture2D" uid="uid://c8w36v3ld2b1x" path="res://graphics/car.png" id="1_7o7st"]
+[ext_resource type="ArrayMesh" uid="uid://byssuhedsdsmb" path="res://models/untitled.obj" id="2_eybpu"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cth8p"]
-size = Vector2(145, 141)
+[sub_resource type="SphereShape3D" id="SphereShape3D_7uq41"]
+radius = 1.59526
 
-[node name="Car" type="CharacterBody2D"]
+[node name="Car" type="Node3D"]
 script = ExtResource("1_7j6ie")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("1_7o7st")
+[node name="Mesh" type="MeshInstance3D" parent="."]
+mesh = ExtResource("2_eybpu")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, -1.5)
-shape = SubResource("RectangleShape2D_cth8p")
+[node name="RayCast3D" type="RayCast3D" parent="Mesh"]
+
+[node name="Camera3D" type="Camera3D" parent="Mesh"]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 3, 6)
+
+[node name="RigidBody3D" type="RigidBody3D" parent="."]
+gravity_scale = 10.0
+angular_damp = 5.0
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
+shape = SubResource("SphereShape3D_7uq41")

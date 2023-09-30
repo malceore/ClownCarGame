@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://bc8d5dw48xue4"]
+
+[ext_resource type="PackedScene" uid="uid://dyfrjvxj54dp0" path="res://scenes/car.tscn" id="1_ai7gx"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_7f043"]
+size = Vector3(60, 5, 60)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_d2wer"]
+size = Vector3(60, 5, 60)
+
+[node name="World" type="Node3D"]
+
+[node name="Car" parent="." instance=ExtResource("1_ai7gx")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.63056, 0)
+
+[node name="Sun" type="OmniLight3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 7.66458, 0)
+light_color = Color(0.976471, 0.760784, 0.658824, 1)
+light_energy = 5.454
+light_indirect_energy = 1.095
+shadow_enabled = true
+omni_range = 29.5159
+
+[node name="Ground" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.38339, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.180882, 0)
+mesh = SubResource("BoxMesh_7f043")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("BoxShape3D_d2wer")

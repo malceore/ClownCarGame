@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://cxeku1b55tf25"]
-
-[ext_resource type="PackedScene" uid="uid://dwq660u34qwho" path="res://scenes/car.tscn" id="1_b0s1g"]
-
-[node name="World" type="Node2D"]
-
-[node name="Car" parent="." instance=ExtResource("1_b0s1g")]
