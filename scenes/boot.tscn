@@ -1,7 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://dby4sndt4djk7"]
+[gd_scene load_steps=3 format=3 uid="uid://dby4sndt4djk7"]
+
+[ext_resource type="Texture2D" uid="uid://bj67c8daoctam" path="res://graphics/boot.png" id="1_pp3b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l82jl"]
-size = Vector2(41, 38)
+size = Vector2(46, 70)
 
 [node name="Boot" type="RigidBody2D"]
 position = Vector2(976, 389)
@@ -10,12 +12,21 @@ inertia = 1000.0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, 0)
+visible = false
+position = Vector2(13, 2)
 shape = SubResource("RectangleShape2D_l82jl")
 
 [node name="TextureRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -19.0
 offset_top = -20.0
 offset_right = 21.0
 offset_bottom = 20.0
 color = Color(0.172549, 1, 1, 1)
+
+[node name="Graphic" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
+texture = ExtResource("1_pp3b0")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
+polygon = PackedVector2Array(-13, 10, -38, 2, -70, 27, -64, 68, -13, 71, 19, 58, 26, 71, 67, 63, 72, 45, 57, 14, 69, -36, 62, -60, 23, -68, -17, -59, -18, -41, -10, -18, -5, 1)

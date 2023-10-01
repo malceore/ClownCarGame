@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://rk6lwtint4ua"]
+[gd_scene load_steps=8 format=3 uid="uid://rk6lwtint4ua"]
 
 [ext_resource type="Script" path="res://MiniGame.gd" id="1_sjmgm"]
+[ext_resource type="Texture2D" uid="uid://c1k0bv72iwfjn" path="res://graphics/background.png" id="2_b44ju"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p7e"]
+size = Vector2(49.2901, 17.1136)
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_clfpr"]
 
@@ -17,25 +19,33 @@ size = Vector2(20, 660)
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_sjmgm")
 
+[node name="Background" type="Sprite2D" parent="."]
+position = Vector2(580.5, 346)
+scale = Vector2(1.08981, 1)
+texture = ExtResource("2_b44ju")
+
 [node name="BootSpawn" type="Node2D" parent="."]
 position = Vector2(976, 389)
 
 [node name="Destination" type="Area2D" parent="."]
-position = Vector2(77, 322)
+position = Vector2(201, 350)
 scale = Vector2(7.60802, 32.192)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Destination"]
+position = Vector2(-3.87749, 1.44322)
 shape = SubResource("RectangleShape2D_q7p7e")
 
 [node name="SuccessColor" type="ColorRect" parent="Destination"]
-offset_left = -10.3838
-offset_top = -9.8161
-offset_right = 29.6162
-offset_bottom = 30.1839
+modulate = Color(1, 1, 1, 0.243137)
+offset_left = -27.0
+offset_top = -7.0
+offset_right = 70.0
+offset_bottom = 29.0
 scale = Vector2(0.493148, 0.502471)
 color = Color(1, 0, 0, 1)
 
 [node name="TextureRect" type="TextureRect" parent="."]
+visible = false
 self_modulate = Color(0, 0.631373, 1, 1)
 show_behind_parent = true
 offset_right = 1147.0
@@ -68,7 +78,7 @@ shape = SubResource("RectangleShape2D_m6ges")
 position = Vector2(582, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2(-8, 0)
+position = Vector2(-11, 117)
 shape = SubResource("RectangleShape2D_m6ges")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -93,18 +103,28 @@ layer = 2
 
 [node name="LockButton" type="Button" parent="GUILayer"]
 visible = false
-offset_left = 45.0
-offset_top = 598.0
-offset_right = 93.0
-offset_bottom = 629.0
-text = "Lock!"
+offset_left = 390.0
+offset_top = 545.0
+offset_right = 650.0
+offset_bottom = 638.0
+theme_override_font_sizes/font_size = 45
+text = "Shut door"
 
 [node name="AbortButton" type="Button" parent="GUILayer"]
-offset_left = 34.0
-offset_top = 23.0
-offset_right = 42.0
-offset_bottom = 31.0
+offset_left = 929.0
+offset_top = 550.0
+offset_right = 1143.0
+offset_bottom = 639.0
+theme_override_font_sizes/font_size = 45
 text = "ABORT!"
+
+[node name="HelperText" type="RichTextLabel" parent="."]
+offset_left = 7.0
+offset_top = 2.0
+offset_right = 1030.0
+offset_bottom = 85.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Cram the clown into your car with your boot."
 
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
