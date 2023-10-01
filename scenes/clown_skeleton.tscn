@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://wmiac7w63pq8" path="res://graphics/gBot_pieces.png" id="1_sgyxu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oocb"]
-size = Vector2(20, 45)
+size = Vector2(20, 38.3206)
 
 [node name="ClownSkeleton" type="Node2D"]
 
@@ -148,7 +148,7 @@ position = Vector2(35, 46)
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_neck"]
-position = Vector2(9, -8)
+position = Vector2(9, -9.89987)
 scale = Vector2(1.5765, 0.568877)
 shape = SubResource("RectangleShape2D_8oocb")
 
@@ -156,6 +156,7 @@ shape = SubResource("RectangleShape2D_8oocb")
 position = Vector2(10, 9)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_torso")
+disable_collision = false
 
 [node name="ColorRect" type="ColorRect" parent="physics_neck"]
 offset_left = -7.0
@@ -220,6 +221,7 @@ offset_bottom = 17.0
 
 [node name="physics_left_arm" type="RigidBody2D" parent="."]
 position = Vector2(69, 89)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_arm"]
@@ -241,6 +243,7 @@ rotation = 0.0890118
 
 [node name="physics_right_arm" type="RigidBody2D" parent="."]
 position = Vector2(14, 92)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_arm"]
@@ -262,6 +265,7 @@ rotation = 0.136136
 
 [node name="physics_left_hand" type="RigidBody2D" parent="."]
 position = Vector2(70, 124)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_hand"]
@@ -278,6 +282,7 @@ rotation = -0.1309
 
 [node name="physics_right_hand" type="RigidBody2D" parent="."]
 position = Vector2(13, 126)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_hand"]
@@ -294,6 +299,7 @@ rotation = -0.0820305
 
 [node name="physics_left_leg" type="RigidBody2D" parent="."]
 position = Vector2(63, 142)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_leg"]
@@ -314,6 +320,7 @@ rotation = 0.249582
 
 [node name="physics_right_leg" type="RigidBody2D" parent="."]
 position = Vector2(21, 141)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_leg"]
@@ -335,6 +342,7 @@ rotation = 0.249582
 
 [node name="physics_left_shin" type="RigidBody2D" parent="."]
 position = Vector2(60, 177)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_shin"]
@@ -351,6 +359,7 @@ rotation = -0.00349066
 
 [node name="physics_right_shin" type="RigidBody2D" parent="."]
 position = Vector2(18, 173)
+mass = 0.5
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_shin"]
