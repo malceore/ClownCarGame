@@ -1,11 +1,13 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyfrjvxj54dp0"]
+[gd_scene load_steps=8 format=3 uid="uid://dyfrjvxj54dp0"]
 
 [ext_resource type="Script" path="res://scripts/car.gd" id="1_7j6ie"]
+[ext_resource type="Texture2D" uid="uid://fxwplfibmebr" path="res://models/clown_car_texture.png" id="2_1wy15"]
 [ext_resource type="ArrayMesh" uid="uid://b5m25fr5q71xv" path="res://models/clown_car.obj" id="2_5r3he"]
 [ext_resource type="Texture2D" uid="uid://bscvp0k58lwyb" path="res://graphics/arrow.png" id="3_dyudl"]
 [ext_resource type="AudioStream" uid="uid://dncwg8qj7gmdt" path="res://sound/car-horn-beep-beep-two-beeps-honk-honk-6188.mp3" id="4_6oqo1"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_msvk6"]
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1t0cl"]
+albedo_texture = ExtResource("2_1wy15")
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_7uq41"]
 radius = 1.59526
@@ -14,7 +16,7 @@ radius = 1.59526
 script = ExtResource("1_7j6ie")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
-material_override = SubResource("StandardMaterial3D_msvk6")
+material_override = SubResource("StandardMaterial3D_1t0cl")
 mesh = ExtResource("2_5r3he")
 
 [node name="RayCast3D" type="RayCast3D" parent="Mesh"]
