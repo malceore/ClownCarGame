@@ -3,8 +3,10 @@ extends Node2D
 var mouseIsOver = false
 var dragging = false
 
+var bootScene = preload("res://scenes/boot.tscn")
 var clown = preload("res://scenes/clown_skeleton.tscn")
 var currentClown
+var boot
 
 func _physics_process(delta):
 	if(Input.is_action_pressed("LeftClick")):
@@ -14,12 +16,18 @@ func _physics_process(delta):
 		dragging = false
 	
 	if(dragging):
-		$Boot.apply_central_force(get_global_mouse_position() - $Boot.global_position)
+		boot.apply_central_force(get_global_mouse_position() - boot.global_position)
 
 func newClown():
 	currentClown = clown.instantiate()
 	currentClown.global_position = $ClownSpawn.global_position
 	add_child(currentClown)
+	boot = bootScene.instantiate()
+	boot.global_position = $BootSpawn.global_position
+	add_child(boot)
+	
+	boot.mouse_entered.connect(_on_boot_mouse_entered)
+	boot.mouse_exited.connect(_on_boot_mouse_exited)
 
 func bootSlam():
 	pass
@@ -48,4 +56,5 @@ func _on_destination_body_exited(body):
 func _on_lock_button_pressed():
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
+	boot.queue_free()
 	hide()

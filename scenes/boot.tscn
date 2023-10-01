@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=3 uid="uid://dby4sndt4djk7"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_l82jl"]
+size = Vector2(41, 38)
+
+[node name="Boot" type="RigidBody2D"]
+position = Vector2(976, 389)
+input_pickable = true
+inertia = 1000.0
+gravity_scale = 0.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, 0)
+shape = SubResource("RectangleShape2D_l82jl")
+
+[node name="TextureRect" type="ColorRect" parent="."]
+offset_left = -19.0
+offset_top = -20.0
+offset_right = 21.0
+offset_bottom = 20.0
+color = Color(0.172549, 1, 1, 1)
