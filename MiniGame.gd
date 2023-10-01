@@ -3,6 +3,8 @@ extends Node2D
 var mouseIsOver = false
 var dragging = false
 
+var cheated = false
+
 var bootScene = preload("res://scenes/boot.tscn")
 var clown = preload("res://scenes/clown_skeleton.tscn")
 var currentClown
@@ -22,6 +24,8 @@ func _physics_process(delta):
 			boot.apply_central_force(get_global_mouse_position() - boot.global_position)
 
 func newClown():
+	$GUILayer/AbortButton.show()
+	
 	currentClown = clown.instantiate()
 	currentClown.global_position = $ClownSpawn.global_position
 	add_child(currentClown)
@@ -60,5 +64,15 @@ func _on_destination_body_exited(body):
 func _on_lock_button_pressed():
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
+	$GUILayer/AbortButton.hide()
 	boot.queue_free()
+	hide()
+
+func _on_abort_button_pressed():
+	cheated = true
+	$Destination/SuccessColor.set_color(Color.RED)
+	$GUILayer/LockButton.hide()
+	$GUILayer/AbortButton.hide()
+	boot.queue_free()
+	currentClown.queue_free()
 	hide()

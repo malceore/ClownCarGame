@@ -32,7 +32,8 @@ func _input(event):
 				miniGame.newClown()
 				miniGame.show()
 				await miniGame.visibility_changed
-				clown.disable()
+				if(!miniGame.cheated):
+					clown.disable()
 				
 	
 func _process(delta):

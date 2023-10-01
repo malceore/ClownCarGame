@@ -99,6 +99,14 @@ offset_right = 93.0
 offset_bottom = 629.0
 text = "Lock!"
 
+[node name="AbortButton" type="Button" parent="GUILayer"]
+offset_left = 34.0
+offset_top = 23.0
+offset_right = 42.0
+offset_bottom = 31.0
+text = "ABORT!"
+
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
 [connection signal="pressed" from="GUILayer/LockButton" to="." method="_on_lock_button_pressed" flags=3]
+[connection signal="pressed" from="GUILayer/AbortButton" to="." method="_on_abort_button_pressed"]
