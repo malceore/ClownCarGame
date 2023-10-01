@@ -30,7 +30,7 @@ func _input(event):
 				var miniGame = owner.get_node("MiniGameLayer/MiniGame")
 				miniGame.newClown()
 				miniGame.show()
-				#await miniGame.visibility_changed
+				await miniGame.visibility_changed
 				clown.disable()
 	
 func _process(delta):

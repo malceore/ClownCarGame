@@ -20,6 +20,9 @@ size = Vector2(20, 660)
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_sjmgm")
 
+[node name="BootSpawn" type="Node2D" parent="."]
+position = Vector2(976, 389)
+
 [node name="Destination" type="Area2D" parent="."]
 position = Vector2(77, 322)
 scale = Vector2(7.60802, 32.192)
