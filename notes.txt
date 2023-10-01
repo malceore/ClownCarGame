@@ -49,14 +49,14 @@ export as .obj
 	Mechanics
 	before mission starts it explains the controls, 
 		you must close the menu to start playing.
-	Make mini game spawn when you press honk by clown.
+	\- Make mini game spawn when you press honk by clown.
 		add a buttons that closes it when youve cramme dthe clown.
 		also an abort button incase it's buggy.
 	Fix mission replay on new levels.
-	add physics boot 
+	\- add physics boot 
 
 	Content
-	Level 1
+	\- Level 1
 		models placed.
 		car and gui placed.
 		tested
@@ -64,22 +64,24 @@ export as .obj
 		models placed.
 		car and gui placed.
 		tested
-	
-	Graphics
+	\- Level 3
+	\- Graphics
 		final clown graphics.
 		clown rigid body graphics
 		back seat graphic and background
-	car model
-	texture buildings and tree		
+	\- car model
+	x- texture buildings and tree		
+	skyboxes
+	little song
+	skeleton graphic
 
-	Sound
-	Cheering when you win.
-	Sad trombone when you lose.
-	Honk noise on car.
+    Sound
+	\- Cheering when you win.
+	\- Sad trombone when you lose.
+	\- Honk noise on car.
 	when leaving cramming mini game makes a close door noise.
 	Car noise when driving.
 	Make it so 1/10 times a clown rigid body collides with an item.
-
 
 
 polish
