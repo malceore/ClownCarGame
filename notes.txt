@@ -1,7 +1,7 @@
 TODO
 Create two mini game prototypes
-	One is a 3d driving games, Brandon will start that.
-	Warren will start on the physics game.
+    One is a 3d driving games, Brandon will start that.
+    Warren will start on the physics game.
 
 
 Driving Game
@@ -12,7 +12,7 @@ Driving Game
 	\- UI shows remaining time and clowns.
 	\- UI arrow that points at nearest clowns.	
 	\- Menu that popups up when you win or lose.
-   		\- functions that make them different if you win or lose.
+   	    \- functions that make them different if you win or lose.
 	3D world has buildings you have to drive around.
 	\-Make main menu
 		can pick a level and difficulty.
@@ -53,6 +53,7 @@ export as .obj
 		add a buttons that closes it when youve cramme dthe clown.
 		also an abort button incase it's buggy.
 	Fix mission replay on new levels.
+	add physics boot 
 
 	Content
 	Level 1
@@ -67,7 +68,7 @@ export as .obj
 	Graphics
 		final clown graphics.
 		clown rigid body graphics
-
+		back seat graphic and background
 	car model
 	texture buildings and tree		
 
@@ -78,3 +79,11 @@ export as .obj
 	when leaving cramming mini game makes a close door noise.
 	Car noise when driving.
 	Make it so 1/10 times a clown rigid body collides with an item.
+
+
+
+polish
+	mobile controls
+	camera has lerp follow
+	car tips when you turn fast
+
