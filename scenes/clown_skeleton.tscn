@@ -1,15 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://gbcy2nmivk1r"]
+[gd_scene load_steps=3 format=3 uid="uid://gbcy2nmivk1r"]
 
 [ext_resource type="Texture2D" uid="uid://wmiac7w63pq8" path="res://graphics/gBot_pieces.png" id="1_sgyxu"]
-[ext_resource type="Script" path="res://scenes/clown_skeleton.gd" id="1_ufou6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8oocb"]
-size = Vector2(20, 45)
+size = Vector2(20, 38.3206)
 
 [node name="ClownSkeleton" type="Node2D"]
-script = ExtResource("1_ufou6")
 
 [node name="Polygons" type="Node2D" parent="."]
+visible = false
 scale = Vector2(0.3, 0.3)
 
 [node name="arm_left" type="Polygon2D" parent="Polygons"]
@@ -68,17 +67,21 @@ uv = PackedVector2Array(84, 16, 129, 43, 95, 186, 135, 331, 95, 356, 55, 355, 27
 bones = ["hip", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso/head", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso/head/jaw", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso/arm_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso/arm_left/hand_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/torso/arm_right", PackedFloat32Array(0.5, 0.5, 0.5, 0, 0, 0, 0, 0.5, 0.5, 0.5), "hip/torso/arm_right/hand_right", PackedFloat32Array(0, 0, 0.5, 0.5, 0.5, 0.5, 0.5, 0.5, 0, 0), "hip/leg_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg_left/calf_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg_left/calf_left/foot_left", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg_right/calf_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0), "hip/leg_right/calf_right/foot_right", PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0)]
 
 [node name="Skeleton" type="Skeleton2D" parent="."]
+visible = false
 
 [node name="hip" type="Bone2D" parent="Skeleton"]
-position = Vector2(46, 120)
+position = Vector2(46, 110)
 rest = Transform2D(1, 0, 0, 1, 46, 120)
 
 [node name="torso" type="Bone2D" parent="Skeleton/hip"]
-position = Vector2(0, -19)
+position = Vector2(0, 10)
 rest = Transform2D(1, 0, 0, 1, 0, -19)
 
+[node name="RemoteTransform2D" type="RemoteTransform2D" parent="Skeleton/hip/torso"]
+position = Vector2(0, 19)
+
 [node name="head" type="Bone2D" parent="Skeleton/hip/torso"]
-position = Vector2(-1, -46)
+position = Vector2(-11, -74)
 rest = Transform2D(1, 0, 0, 1, -1, -46)
 
 [node name="jaw" type="Bone2D" parent="Skeleton/hip/torso/head"]
@@ -89,23 +92,22 @@ length = 43.649
 bone_angle = 0.0
 
 [node name="arm_left" type="Bone2D" parent="Skeleton/hip/torso"]
-position = Vector2(25, -31)
+position = Vector2(23, -31)
 rest = Transform2D(1, 0, 0, 1, 25, -31)
 
 [node name="hand_left" type="Bone2D" parent="Skeleton/hip/torso/arm_left"]
-position = Vector2(-3, 37)
-rotation = 1.39758
+position = Vector2(1, 35)
 rest = Transform2D(0.172347, 0.985036, -0.985036, 0.172347, -3, 37)
 auto_calculate_length_and_angle = false
 length = 36.0
 bone_angle = 0.0
 
 [node name="arm_right" type="Bone2D" parent="Skeleton/hip/torso"]
-position = Vector2(-30, -26)
+position = Vector2(-32, -28)
 rest = Transform2D(1, 0, 0, 1, -30, -26)
 
 [node name="hand_right" type="Bone2D" parent="Skeleton/hip/torso/arm_right"]
-position = Vector2(-4, 33)
+position = Vector2(-1, 34)
 rest = Transform2D(1, 0, 0, 1, -4, 33)
 auto_calculate_length_and_angle = false
 length = 36.0
@@ -143,10 +145,10 @@ bone_angle = 0.0
 
 [node name="physics_neck" type="RigidBody2D" parent="."]
 position = Vector2(35, 46)
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_neck"]
-position = Vector2(9, -8)
-rotation = -0.022847
+position = Vector2(9, -9.89987)
 scale = Vector2(1.5765, 0.568877)
 shape = SubResource("RectangleShape2D_8oocb")
 
@@ -154,9 +156,17 @@ shape = SubResource("RectangleShape2D_8oocb")
 position = Vector2(10, 9)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_torso")
+disable_collision = false
+
+[node name="ColorRect" type="ColorRect" parent="physics_neck"]
+offset_left = -7.0
+offset_top = -21.0
+offset_right = 25.0
+offset_bottom = 5.0
 
 [node name="physics_torso" type="RigidBody2D" parent="."]
 position = Vector2(46, 77)
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_torso"]
 position = Vector2(-3, 1)
@@ -178,8 +188,15 @@ position = Vector2(25, -6)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_left_arm")
 
+[node name="ColorRect" type="ColorRect" parent="physics_torso"]
+offset_left = -25.0
+offset_top = -22.0
+offset_right = 19.0
+offset_bottom = 24.0
+
 [node name="physics_hip" type="RigidBody2D" parent="."]
 position = Vector2(46, 110)
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_hip"]
 position = Vector2(-1, 4)
@@ -196,8 +213,16 @@ position = Vector2(21, 14)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_left_leg")
 
+[node name="ColorRect" type="ColorRect" parent="physics_hip"]
+offset_left = -19.0
+offset_top = -8.0
+offset_right = 17.0
+offset_bottom = 17.0
+
 [node name="physics_left_arm" type="RigidBody2D" parent="."]
 position = Vector2(69, 89)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_arm"]
 rotation = 0.0883052
@@ -209,8 +234,17 @@ position = Vector2(-1, 19)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_left_hand")
 
+[node name="ColorRect" type="ColorRect" parent="physics_left_arm"]
+offset_left = -2.0
+offset_top = -18.0
+offset_right = 5.0
+offset_bottom = 17.0
+rotation = 0.0890118
+
 [node name="physics_right_arm" type="RigidBody2D" parent="."]
 position = Vector2(14, 92)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_arm"]
 rotation = 0.136032
@@ -222,24 +256,51 @@ position = Vector2(-2, 17)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_right_hand")
 
+[node name="ColorRect" type="ColorRect" parent="physics_right_arm"]
+offset_left = -1.0
+offset_top = -17.0
+offset_right = 6.0
+offset_bottom = 17.0
+rotation = 0.136136
+
 [node name="physics_left_hand" type="RigidBody2D" parent="."]
 position = Vector2(70, 124)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_hand"]
 rotation = -0.131024
 scale = Vector2(0.33591, 0.735438)
 shape = SubResource("RectangleShape2D_8oocb")
 
+[node name="ColorRect" type="ColorRect" parent="physics_left_hand"]
+offset_left = -6.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 19.0
+rotation = -0.1309
+
 [node name="physics_right_hand" type="RigidBody2D" parent="."]
 position = Vector2(13, 126)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_hand"]
 rotation = -0.081372
 scale = Vector2(0.33591, 0.735438)
 shape = SubResource("RectangleShape2D_8oocb")
 
+[node name="ColorRect" type="ColorRect" parent="physics_right_hand"]
+offset_left = -5.0
+offset_top = -16.0
+offset_right = 2.0
+offset_bottom = 19.0
+rotation = -0.0820305
+
 [node name="physics_left_leg" type="RigidBody2D" parent="."]
 position = Vector2(63, 142)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_leg"]
 rotation = 0.24937
@@ -251,8 +312,16 @@ position = Vector2(-3, 19)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_left_shin")
 
+[node name="ColorRect" type="ColorRect" parent="physics_left_leg"]
+offset_top = -19.0
+offset_right = 9.0
+offset_bottom = 18.0
+rotation = 0.249582
+
 [node name="physics_right_leg" type="RigidBody2D" parent="."]
 position = Vector2(21, 141)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_leg"]
 rotation = 0.24937
@@ -264,19 +333,44 @@ position = Vector2(-4, 14)
 node_a = NodePath("..")
 node_b = NodePath("../../physics_right_shin")
 
+[node name="ColorRect" type="ColorRect" parent="physics_right_leg"]
+offset_left = -1.0
+offset_top = -15.0
+offset_right = 8.0
+offset_bottom = 14.0
+rotation = 0.249582
+
 [node name="physics_left_shin" type="RigidBody2D" parent="."]
 position = Vector2(60, 177)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_left_shin"]
 rotation = -0.00282755
 scale = Vector2(0.413435, 0.722655)
 shape = SubResource("RectangleShape2D_8oocb")
 
+[node name="ColorRect" type="ColorRect" parent="physics_left_shin"]
+offset_left = -4.0
+offset_top = -17.0
+offset_right = 4.0
+offset_bottom = 16.0
+rotation = -0.00349066
+
 [node name="physics_right_shin" type="RigidBody2D" parent="."]
 position = Vector2(18, 173)
+mass = 0.5
+gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="physics_right_shin"]
 position = Vector2(0, 1)
 rotation = -0.0906805
 scale = Vector2(0.413435, 0.786641)
 shape = SubResource("RectangleShape2D_8oocb")
+
+[node name="ColorRect" type="ColorRect" parent="physics_right_shin"]
+offset_left = -6.0
+offset_top = -17.0
+offset_right = 3.0
+offset_bottom = 19.0
+rotation = -0.0907571

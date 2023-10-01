@@ -21,9 +21,11 @@ func _on_boot_mouse_exited():
 
 
 func _on_destination_body_entered(body):
-	if(body.name == "Clown"):
+	if(body.owner == $Clown):
 		$Destination/SuccessColor.set_color(Color.GREEN)
+		body.constant_force = Vector2(-10,0)
 
 func _on_destination_body_exited(body):
-	if(body.name == "Clown"):
+	if(body.owner == $Clown):
 		$Destination/SuccessColor.set_color(Color.RED)
+		body.constant_force = Vector2(0,0)
