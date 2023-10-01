@@ -13,6 +13,7 @@ func setDifficulty():
 func _ready():
 	setDifficulty()
 	$UI/DriveTimer.start()
+	$audioTheme.play()
 
 func _process(delta):
 	var disabled_clown_count = 0
