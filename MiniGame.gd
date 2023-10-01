@@ -20,7 +20,6 @@ func newClown():
 	currentClown = clown.instantiate()
 	currentClown.global_position = $ClownSpawn.global_position
 	add_child(currentClown)
-	$Boot.global_position = $BootSpawn.global_position
 
 func bootSlam():
 	pass
