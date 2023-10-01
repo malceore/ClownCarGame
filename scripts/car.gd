@@ -28,8 +28,9 @@ func _input(event):
 		for clown in get_parent().clowns:
 			if clown.position.distance_to(car_mesh.position) <= honkRange and clown.enabled:
 				var miniGame = owner.get_node("MiniGameLayer/MiniGame")
+				miniGame.newClown()
 				miniGame.show()
-				await miniGame.visibility_changed
+				#await miniGame.visibility_changed
 				clown.disable()
 	
 func _process(delta):

@@ -1,7 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://rk6lwtint4ua"]
+[gd_scene load_steps=8 format=3 uid="uid://rk6lwtint4ua"]
 
 [ext_resource type="Script" path="res://MiniGame.gd" id="1_sjmgm"]
-[ext_resource type="PackedScene" uid="uid://gbcy2nmivk1r" path="res://scenes/clown_skeleton.tscn" id="2_77q5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p7e"]
 
@@ -60,9 +59,6 @@ offset_right = 1147.0
 offset_bottom = 646.0
 texture = SubResource("CanvasTexture_clfpr")
 
-[node name="Clown" parent="." instance=ExtResource("2_77q5t")]
-position = Vector2(749, 365)
-
 [node name="TestClownBox" type="RigidBody2D" parent="."]
 position = Vector2(1262, 417)
 gravity_scale = 0.0
@@ -106,16 +102,22 @@ position = Vector2(1151, 303)
 position = Vector2(-1152, 20)
 shape = SubResource("RectangleShape2D_gbvfi")
 
-[node name="LockButton" type="Button" parent="."]
+[node name="ClownSpawn" type="Node2D" parent="."]
+position = Vector2(728, 361)
+
+[node name="GUILayer" type="CanvasLayer" parent="."]
+layer = 2
+
+[node name="LockButton" type="Button" parent="GUILayer"]
 visible = false
 offset_left = 45.0
 offset_top = 598.0
-offset_right = 53.0
-offset_bottom = 606.0
+offset_right = 93.0
+offset_bottom = 629.0
 text = "Lock!"
 
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
 [connection signal="mouse_entered" from="Boot" to="." method="_on_boot_mouse_entered"]
 [connection signal="mouse_exited" from="Boot" to="." method="_on_boot_mouse_exited"]
-[connection signal="pressed" from="LockButton" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="GUILayer/LockButton" to="." method="_on_button_pressed"]
