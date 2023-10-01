@@ -37,8 +37,9 @@ scale = Vector2(0.493148, 0.502471)
 color = Color(1, 0, 0, 1)
 
 [node name="Boot" type="RigidBody2D" parent="."]
-position = Vector2(567, 286)
+position = Vector2(976, 389)
 input_pickable = true
+inertia = 1000.0
 gravity_scale = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Boot"]
