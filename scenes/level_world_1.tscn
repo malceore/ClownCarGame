@@ -53,6 +53,7 @@ mesh = SubResource("PlaneMesh_5iml5")
 skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36817, -0.0832636, 0.423084)
 shape = SubResource("BoxShape3D_l767x")
 
 [node name="city" type="Node3D" parent="."]
@@ -3148,7 +3149,7 @@ transform = Transform3D(-0.1, 0, 4.999, 0, 5, 0, -4.999, 0, -0.1, 121.406, 7.157
 mesh = ExtResource("2_36eqc")
 
 [node name="MeshInstance3D672" type="MeshInstance3D" parent="city"]
-transform = Transform3D(-2.37182, 0, -4.40164, 0, 5, 0, 4.40164, 0, -2.37182, 94.7413, 4.48371, -61.2082)
+transform = Transform3D(-2.37182, 0, -4.40164, 0, 5, 0, 4.40164, 0, -2.37182, 89.9113, 2.3982, -57.4223)
 mesh = ExtResource("4_xtubj")
 
 [node name="MeshInstance3D673" type="MeshInstance3D" parent="city"]
@@ -3209,43 +3210,43 @@ shape = SubResource("BoxShape3D_xdgfn")
 [node name="StaticBody3D2" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D2"]
-transform = Transform3D(-0.999927, 0, 0.0121297, 0, 1, 0, -0.0121297, 0, -0.999927, -144.373, 55.2207, 137.167)
+transform = Transform3D(-0.999927, 0, 0.0121297, 0, 1, 0, -0.0121297, 0, -0.999927, -144.373, 44.7809, 137.167)
 shape = SubResource("BoxShape3D_ghvhc")
 
 [node name="StaticBody3D3" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D3"]
-transform = Transform3D(-0.00123922, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00123922, -131.124, 49.0773, -203.186)
+transform = Transform3D(-0.00123922, 0, 0.999999, 0, 1, 0, -0.999999, 0, -0.00123922, -132.88, 33.1213, -172.054)
 shape = SubResource("BoxShape3D_47orm")
 
 [node name="StaticBody3D4" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D4"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.788, 44.2463, -167.405)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 159.788, 44.2463, -143.028)
 shape = SubResource("BoxShape3D_sj8y3")
 
 [node name="StaticBody3D5" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D5"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 291.422, 41.8593, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 292.436, 32.3381, 1.18544)
 shape = SubResource("BoxShape3D_gmda6")
 
 [node name="StaticBody3D6" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D6"]
-transform = Transform3D(0.0119901, 0, -0.999928, 0, 1, 0, 0.999928, 0, 0.0119901, 5.602, 43.3515, 271.776)
+transform = Transform3D(0.0119901, 0, -0.999928, 0, 1, 0, 0.999928, 0, 0.0119901, 5.602, 20.1142, 271.776)
 shape = SubResource("BoxShape3D_xk5o2")
 
 [node name="StaticBody3D7" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D7"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -284.265, 51.7673, -33.0075)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -284.265, 41.7491, -33.0075)
 shape = SubResource("BoxShape3D_gh3ck")
 
 [node name="StaticBody3D8" type="StaticBody3D" parent="city"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="city/StaticBody3D8"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.7546, 44.512, -281.76)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.4806, 24.7141, -258.025)
 shape = SubResource("BoxShape3D_nmif4")
 
 [node name="bigtop" type="MeshInstance3D" parent="."]
@@ -3342,17 +3343,18 @@ stream = ExtResource("8_tsdq3")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 0)
-light_color = Color(0.992157, 0.423529, 0.560784, 1)
+light_color = Color(0.572549, 0.517647, 0.262745, 1)
 light_energy = 160.0
 light_indirect_energy = 5.863
 omni_range = 447.0
-
-[node name="Car" parent="." instance=ExtResource("10_cxamc")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.45699, 26.7967)
 
 [node name="MiniGameLayer" type="CanvasLayer" parent="."]
 
 [node name="MiniGame" parent="MiniGameLayer" instance=ExtResource("11_rjnqy")]
 visible = false
 
-[node name="ClownBillboard1" parent="." instance=ExtResource("9_71g1l")]
+[node name="ClownBillboard" parent="." instance=ExtResource("9_71g1l")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.0951, 0, -21.5606)
+
+[node name="Car" parent="." instance=ExtResource("10_cxamc")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15.8001, 0)
