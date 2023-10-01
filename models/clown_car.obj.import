@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://b5m25fr5q71xv"
+path="res://.godot/imported/clown_car.obj-8c71fa8b8047a7777305e65053b28e34.mesh"
+
+[deps]
+
+files=["res://.godot/imported/clown_car.obj-8c71fa8b8047a7777305e65053b28e34.mesh"]
+
+source_file="res://models/clown_car.obj"
+dest_files=["res://.godot/imported/clown_car.obj-8c71fa8b8047a7777305e65053b28e34.mesh", "res://.godot/imported/clown_car.obj-8c71fa8b8047a7777305e65053b28e34.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

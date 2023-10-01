@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://dktdwm8hut2ew" path="res://sound/yay-6326.mp3" id="6_41gma"]
 [ext_resource type="PackedScene" uid="uid://nv0j85y4k0f" path="res://scenes/drive_timer.tscn" id="6_giqob"]
 [ext_resource type="Texture2D" uid="uid://wom3vv1huwl" path="res://graphics/shadow_ui.png" id="7_1ke8p"]
+[ext_resource type="PackedScene" uid="uid://rk6lwtint4ua" path="res://scenes/mini_game.tscn" id="8_6traw"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_6cryo"]
 
@@ -286,3 +287,8 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -49.3572, 1, 44.1618)
 
 [node name="ClownBillboard4" parent="." instance=ExtResource("4_tbmm1")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.3165, 1, -90.5732)
+
+[node name="MiniGameLayer" type="CanvasLayer" parent="."]
+
+[node name="MiniGame" parent="MiniGameLayer" instance=ExtResource("8_6traw")]
+visible = false
