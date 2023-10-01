@@ -1,0 +1,21 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://snhnlnvppd8s"
+path="res://.godot/imported/lava_pool.obj-80158e568bbfe912cfa65de8272b3141.mesh"
+
+[deps]
+
+files=["res://.godot/imported/lava_pool.obj-80158e568bbfe912cfa65de8272b3141.mesh"]
+
+source_file="res://models/lava_pool.obj"
+dest_files=["res://.godot/imported/lava_pool.obj-80158e568bbfe912cfa65de8272b3141.mesh", "res://.godot/imported/lava_pool.obj-80158e568bbfe912cfa65de8272b3141.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true

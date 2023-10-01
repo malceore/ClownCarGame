@@ -84,6 +84,7 @@ theme_override_font_sizes/font_size = 22
 text = "Level 3"
 
 [node name="Difficulty" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 307.0
 offset_top = 253.0
 offset_right = 483.0
