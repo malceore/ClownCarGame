@@ -1,4 +1,10 @@
-[gd_scene load_steps=3 format=3 uid="uid://cdp35fqmmxkah"]
+[gd_scene load_steps=8 format=3 uid="uid://cdp35fqmmxkah"]
+
+[ext_resource type="ArrayMesh" uid="uid://cpnn2gaoseb2j" path="res://models/Building1.obj" id="1_xs74t"]
+[ext_resource type="ArrayMesh" uid="uid://dxha52rfr4ik3" path="res://models/Buliding2final.obj" id="2_36eqc"]
+[ext_resource type="ArrayMesh" uid="uid://cf6k8m3hn1rvq" path="res://models/Building4.obj" id="3_abcgd"]
+[ext_resource type="ArrayMesh" uid="uid://bonguygqccnjj" path="res://models/Building5.obj" id="4_xtubj"]
+[ext_resource type="ArrayMesh" uid="uid://dn3umunjvwhjr" path="res://models/Bigtop.obj" id="5_jing2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5iml5"]
 
@@ -17,4 +23,53 @@ skeleton = NodePath("../..")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 shape = SubResource("BoxShape3D_l767x")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="Node3D" type="Node3D" parent="."]
+
+[node name="building" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 253.206, 5.71637, -58.6635)
+mesh = ExtResource("1_xs74t")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 259.305, 7.157, -83.9238)
+mesh = ExtResource("2_36eqc")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 256.531, 7.02861, -72.1495)
+mesh = ExtResource("3_abcgd")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 261.622, 4.48371, -45.9294)
+mesh = ExtResource("4_xtubj")
+
+[node name="building2" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 264.748, 5.71637, 30.4174)
+mesh = ExtResource("1_xs74t")
+
+[node name="MeshInstance3D5" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 247.013, 7.157, 49.4106)
+mesh = ExtResource("2_36eqc")
+
+[node name="MeshInstance3D6" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 255.219, 7.02861, 40.5237)
+mesh = ExtResource("3_abcgd")
+
+[node name="MeshInstance3D7" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 263.684, 4.48371, 15.1907)
+mesh = ExtResource("4_xtubj")
+
+[node name="building3" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, 253.206, 5.71637, 61.3738)
+mesh = ExtResource("1_xs74t")
+
+[node name="MeshInstance3D8" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 263.684, 4.48371, 75.4448)
+mesh = ExtResource("4_xtubj")
+
+[node name="MeshInstance3D9" type="MeshInstance3D" parent="Node3D"]
+transform = Transform3D(-4.35332, 0, 2.45938, 0, 5, 0, -2.45938, 0, -4.35332, 247.013, 7.157, 85.1072)
+mesh = ExtResource("2_36eqc")
+
+[node name="bigtop" type="MeshInstance3D" parent="."]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+mesh = ExtResource("5_jing2")
+skeleton = NodePath("../Node3D")
