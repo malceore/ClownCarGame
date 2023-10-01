@@ -2,8 +2,8 @@
 
 [ext_resource type="ArrayMesh" uid="uid://cpnn2gaoseb2j" path="res://models/Building1.obj" id="1_xs74t"]
 [ext_resource type="ArrayMesh" uid="uid://dxha52rfr4ik3" path="res://models/Buliding2final.obj" id="2_36eqc"]
-[ext_resource type="ArrayMesh" uid="uid://cf6k8m3hn1rvq" path="res://models/Building4.obj" id="3_abcgd"]
-[ext_resource type="ArrayMesh" uid="uid://bonguygqccnjj" path="res://models/Building5.obj" id="4_xtubj"]
+[ext_resource type="ArrayMesh" uid="uid://5rfk0i22cmob" path="res://models/Building4.obj" id="3_abcgd"]
+[ext_resource type="ArrayMesh" uid="uid://bv3w78dnwpq0m" path="res://models/Building5.obj" id="4_xtubj"]
 [ext_resource type="ArrayMesh" uid="uid://dn3umunjvwhjr" path="res://models/Bigtop.obj" id="5_jing2"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_5iml5"]
