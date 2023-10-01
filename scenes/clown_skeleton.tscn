@@ -1,4 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://gbcy2nmivk1r"]
+[gd_scene load_steps=15 format=3 uid="uid://gbcy2nmivk1r"]
+
+[ext_resource type="Texture2D" uid="uid://cmelwm33bwto" path="res://graphics/clown_skeleton_graphics/head.png" id="1_ttmcg"]
+[ext_resource type="Texture2D" uid="uid://c2v0oopa5qxbg" path="res://graphics/clown_skeleton_graphics/shirt.png" id="2_uygie"]
+[ext_resource type="Texture2D" uid="uid://b8d3pke4ng8bt" path="res://graphics/clown_skeleton_graphics/hand.png" id="3_tjo88"]
+[ext_resource type="Texture2D" uid="uid://cr711v557eios" path="res://graphics/clown_skeleton_graphics/shoe.png" id="4_14fud"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mxv2i"]
 size = Vector2(68, 53)
@@ -45,6 +50,11 @@ position = Vector2(24, 48.5)
 node_a = NodePath("..")
 node_b = NodePath("../../torso")
 
+[node name="Sprite2D" type="Sprite2D" parent="head"]
+position = Vector2(25, 21)
+scale = Vector2(1.6875, 1.5)
+texture = ExtResource("1_ttmcg")
+
 [node name="torso" type="RigidBody2D" parent="."]
 position = Vector2(80, 94.5)
 gravity_scale = 0.0
@@ -52,6 +62,11 @@ gravity_scale = 0.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="torso"]
 position = Vector2(5.25, 43.5)
 shape = SubResource("RectangleShape2D_60sti")
+
+[node name="Sprite2D" type="Sprite2D" parent="torso"]
+position = Vector2(4, 35)
+scale = Vector2(2.5, 2.72917)
+texture = ExtResource("2_uygie")
 
 [node name="left_arm" type="RigidBody2D" parent="."]
 position = Vector2(150, 110.5)
@@ -119,6 +134,11 @@ position = Vector2(-12, -25)
 node_a = NodePath("../../left_arm")
 node_b = NodePath("..")
 
+[node name="Sprite2D" type="Sprite2D" parent="left_hand"]
+position = Vector2(-5, 35.5)
+rotation = 3.11274
+texture = ExtResource("3_tjo88")
+
 [node name="right_hand" type="RigidBody2D" parent="."]
 position = Vector2(16, 212.5)
 gravity_scale = 0.0
@@ -133,6 +153,12 @@ position = Vector2(8, -26)
 node_a = NodePath("../../right_arm")
 node_b = NodePath("..")
 
+[node name="Sprite2D" type="Sprite2D" parent="right_hand"]
+position = Vector2(2, 32.5)
+rotation = -3.09515
+texture = ExtResource("3_tjo88")
+flip_h = true
+
 [node name="right_calf" type="RigidBody2D" parent="."]
 position = Vector2(38, 334.5)
 gravity_scale = 0.0
@@ -146,6 +172,12 @@ position = Vector2(2, -48)
 node_a = NodePath("../../right_leg")
 node_b = NodePath("..")
 
+[node name="Sprite2D" type="Sprite2D" parent="right_calf"]
+position = Vector2(-9, 27.5)
+scale = Vector2(1.332, 1.506)
+texture = ExtResource("4_14fud")
+flip_h = true
+
 [node name="left_calf" type="RigidBody2D" parent="."]
 position = Vector2(135, 328.5)
 gravity_scale = 0.0
@@ -158,3 +190,8 @@ shape = SubResource("RectangleShape2D_noox4")
 position = Vector2(0, -41)
 node_a = NodePath("../../left_leg")
 node_b = NodePath("..")
+
+[node name="Sprite2D" type="Sprite2D" parent="left_calf"]
+position = Vector2(10, 33.5)
+scale = Vector2(1.33237, 1.50607)
+texture = ExtResource("4_14fud")
