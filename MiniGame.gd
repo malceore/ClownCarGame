@@ -11,7 +11,7 @@ var currentClown
 var boot
 
 func _physics_process(delta):
-	if(Input.is_action_pressed("Boot")):
+	if(Input.is_action_pressed("Boot") and visible):
 		bootSlam()
 	else:
 		if(Input.is_action_pressed("LeftClick")):
@@ -38,7 +38,7 @@ func newClown():
 	$Destination.set_monitoring(true)
 
 func bootSlam():
-	var slamVector = currentClown.get_node("physics_torso").global_position - boot.global_position
+	var slamVector = currentClown.get_node("torso").global_position - boot.global_position
 	boot.apply_impulse(slamVector.normalized() * 1000)
 
 func _on_boot_mouse_entered():
@@ -53,7 +53,7 @@ func _on_destination_body_entered(body):
 		$Destination/SuccessColor.set_color(Color.GREEN)
 		$GUILayer/LockButton.show()
 		
-		body.constant_force = Vector2(-40,0)
+		body.constant_force = Vector2(-80,0)
 
 func _on_destination_body_exited(body):
 	if(body.owner == currentClown):

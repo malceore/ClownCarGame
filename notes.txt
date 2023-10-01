@@ -75,7 +75,7 @@ export as .obj
 	little song
 	skeleton graphic
 
-    Sound
+	Sound
 	\- Cheering when you win.
 	\- Sad trombone when you lose.
 	\- Honk noise on car.
