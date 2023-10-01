@@ -5,13 +5,6 @@ Create two mini game prototypes
 
 
 Driving Game
-	3d world has clowns.
-	When close enough you can cram clowns. Just console log for now and make clown disappear.
-	world has a list of clowns, get them all and logs that you win.
-	world has a timer that if it gets to zero you lose.	
-	UI shows remaining time and clowns.
-	3D world has buildings you have to drive around.
-	UI arrow that points at nearest clowns.	
 	\-3d world has clowns.
 	\-When close enough you can cram clowns. Just console log for now and make clown disappear.
 	\-world has a list of clowns, get them all and logs that you win.
@@ -47,3 +40,41 @@ export as .obj
 
 3 Levels
 300x300 Meters
+
+
+--------------------
+===Day three work===
+--------------------
+
+    Mechanics
+	before mission starts it explains the controls, 
+		you must close the menu to start playing.
+	Make mini game spawn when you press honk by clown.
+		add a buttons that closes it when youve cramme dthe clown.
+		also an abort button incase it's buggy.
+	Fix mission replay on new levels.
+
+    Content
+	Level 1
+		models placed.
+		car and gui placed.
+		tested
+	Level 2
+		models placed.
+		car and gui placed.
+		tested
+	
+	Graphics
+		final clown graphics.
+		clown rigid body graphics
+
+	car model
+	texture buildings and tree		
+
+    Sound
+	Cheering when you win.
+	Sad trombone when you lose.
+	Honk noise on car.
+	when leaving cramming mini game makes a close door noise.
+	Car noise when driving.
+	Make it so 1/10 times a clown rigid body collides with an item.
