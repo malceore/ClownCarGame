@@ -1,0 +1,174 @@
+[gd_scene load_steps=11 format=3 uid="uid://dc22i48bwtf77"]
+
+[ext_resource type="Script" path="res://scripts/world.gd" id="1_16tgc"]
+[ext_resource type="PackedScene" uid="uid://nv0j85y4k0f" path="res://scenes/drive_timer.tscn" id="2_a8kaf"]
+[ext_resource type="Texture2D" uid="uid://wom3vv1huwl" path="res://graphics/shadow_ui.png" id="3_322s4"]
+[ext_resource type="AudioStream" uid="uid://dktdwm8hut2ew" path="res://sound/yay-6326.mp3" id="4_oatae"]
+[ext_resource type="PackedScene" uid="uid://dyfrjvxj54dp0" path="res://scenes/car.tscn" id="5_w7xxr"]
+[ext_resource type="PackedScene" uid="uid://rk6lwtint4ua" path="res://scenes/mini_game.tscn" id="7_gn2ro"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_q3xjd"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kdc21"]
+size = Vector3(600, 5, 600)
+
+[sub_resource type="BoxMesh" id="BoxMesh_nrbtx"]
+size = Vector3(600, 25, 10)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_b1cdk"]
+size = Vector3(600, 10, 10)
+
+[node name="WorldBoilerplate" type="Node3D"]
+script = ExtResource("1_16tgc")
+
+[node name="ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="ground"]
+transform = Transform3D(300, 0, 0, 0, 300, 0, 0, 0, 300, 0, 0, 0)
+mesh = SubResource("PlaneMesh_q3xjd")
+skeleton = NodePath("../..")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.3834, 0)
+shape = SubResource("BoxShape3D_kdc21")
+
+[node name="wall1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -9.47446)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4368, 304.658)
+mesh = SubResource("BoxMesh_nrbtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7662, 305.485)
+shape = SubResource("BoxShape3D_b1cdk")
+
+[node name="wall2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -591.813)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4368, 304.658)
+mesh = SubResource("BoxMesh_nrbtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7662, 305.485)
+shape = SubResource("BoxShape3D_b1cdk")
+
+[node name="wall3" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0240657, 0, 0.99971, 0, 1, 0, -0.99971, 0, -0.0240657, -34.8349, 0, 11.9019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4368, 304.658)
+mesh = SubResource("BoxMesh_nrbtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall3"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.90735e-06, 12.7662, 305.485)
+shape = SubResource("BoxShape3D_b1cdk")
+
+[node name="wall4" type="StaticBody3D" parent="."]
+transform = Transform3D(-0.0240657, 0, 0.99971, 0, 1, 0, -0.99971, 0, -0.0240657, -559.429, 0, 11.9019)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.4368, 304.658)
+mesh = SubResource("BoxMesh_nrbtx")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="wall4"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 12.7662, 305.485)
+shape = SubResource("BoxShape3D_b1cdk")
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="DriveTimer" parent="UI" instance=ExtResource("2_a8kaf")]
+
+[node name="ClownCount" type="RichTextLabel" parent="UI"]
+offset_left = 899.0
+offset_top = 16.0
+offset_right = 1176.0
+offset_bottom = 78.0
+theme_override_font_sizes/normal_font_size = 40
+text = "Clowns  0/8"
+
+[node name="Summary" type="TextureRect" parent="UI"]
+visible = false
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -307.0
+offset_top = -176.0
+offset_right = 307.0
+offset_bottom = 176.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_322s4")
+
+[node name="ReplayButton" type="Button" parent="UI/Summary"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = 31.0
+offset_top = -58.0
+offset_right = 291.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Replay"
+
+[node name="Title" type="RichTextLabel" parent="UI/Summary"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 12.0
+offset_right = 154.0
+offset_bottom = 52.0
+grow_horizontal = 2
+text = "Level Summary
+"
+
+[node name="Breakdown" type="RichTextLabel" parent="UI/Summary"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -287.0
+offset_top = 66.0
+offset_right = 268.0
+offset_bottom = 272.0
+grow_horizontal = 2
+text = "Score Breakdown
+"
+
+[node name="ReturnButton" type="Button" parent="UI/Summary"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -288.0
+offset_top = -58.0
+offset_right = -28.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Return to Menu"
+
+[node name="audioWin" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("4_oatae")
+
+[node name="Car" parent="." instance=ExtResource("5_w7xxr")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77434, 0)
+
+[node name="MiniGameLayer" type="CanvasLayer" parent="."]
+
+[node name="MiniGame" parent="MiniGameLayer" instance=ExtResource("7_gn2ro")]
+visible = false
+
+[connection signal="pressed" from="UI/Summary/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="UI/Summary/ReturnButton" to="." method="_on_return_button_pressed"]
