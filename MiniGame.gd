@@ -20,6 +20,10 @@ func newClown():
 	currentClown = clown.instantiate()
 	currentClown.global_position = $ClownSpawn.global_position
 	add_child(currentClown)
+	$Boot.global_position = $BootSpawn.global_position
+
+func bootSlam():
+	pass
 
 func _on_boot_mouse_entered():
 	mouseIsOver = true
@@ -42,8 +46,7 @@ func _on_destination_body_exited(body):
 		
 		body.constant_force = Vector2(0,0)
 
-
-func _on_button_pressed():
+func _on_lock_button_pressed():
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
 	hide()
