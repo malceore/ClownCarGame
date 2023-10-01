@@ -129,4 +129,4 @@ text = "Cram the clown into your car with your boot."
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
 [connection signal="pressed" from="GUILayer/LockButton" to="." method="_on_lock_button_pressed" flags=3]
-[connection signal="pressed" from="GUILayer/AbortButton" to="." method="_on_abort_button_pressed"]
+[connection signal="pressed" from="GUILayer/AbortButton" to="." method="_on_abort_button_pressed" flags=3]
