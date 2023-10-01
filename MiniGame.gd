@@ -63,6 +63,7 @@ func _on_destination_body_exited(body):
 		body.constant_force = Vector2(0,0)
 
 func _on_lock_button_pressed():
+	$audioSlam.play()
 	$Destination.set_monitoring(false)
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()

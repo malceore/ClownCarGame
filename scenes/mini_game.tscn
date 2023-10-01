@@ -1,7 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://rk6lwtint4ua"]
+[gd_scene load_steps=9 format=3 uid="uid://rk6lwtint4ua"]
 
 [ext_resource type="Script" path="res://MiniGame.gd" id="1_sjmgm"]
 [ext_resource type="Texture2D" uid="uid://c1k0bv72iwfjn" path="res://graphics/background.png" id="2_b44ju"]
+[ext_resource type="AudioStream" uid="uid://dmo8c4tsgnjbu" path="res://sound/car-door-close-6804.mp3" id="3_v5cjb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p7e"]
 size = Vector2(49.2901, 17.1136)
@@ -126,6 +127,9 @@ offset_right = 1030.0
 offset_bottom = 85.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Cram the clown into your car with your boot."
+
+[node name="audioSlam" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_v5cjb")
 
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
