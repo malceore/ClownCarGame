@@ -4,8 +4,8 @@ extends Node3D
 @onready var car_mesh = $Mesh
 @onready var ground_ray = $Mesh/RayCast3D
 
-@export var turn_speed = 2
-@export var acceleration = 50
+@export var turn_speed = 5
+@export var acceleration = 70
 @export var honkRange = 6
 var sphere_offset = Vector3(0, -1.0, 0)
 var steering = 21.0
@@ -25,6 +25,7 @@ func _physics_process(_delta):
 	
 func _input(event):
 	if event.is_action_pressed("honk"):
+		$audioHonk.play()
 		for clown in get_parent().clowns:
 			if clown.position.distance_to(car_mesh.position) <= honkRange and clown.enabled:
 				var miniGame = owner.get_node("MiniGameLayer/MiniGame")
@@ -32,6 +33,7 @@ func _input(event):
 				miniGame.show()
 				#await miniGame.visibility_changed
 				clown.disable()
+				
 	
 func _process(delta):
 	# Get accelerate/brake input
