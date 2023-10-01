@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://nv0j85y4k0f"]
+[gd_scene load_steps=4 format=3 uid="uid://nv0j85y4k0f"]
 
 [ext_resource type="Script" path="res://scripts/drive_timer.gd" id="1_vxr8r"]
+[ext_resource type="AudioStream" uid="uid://dieqjr8pa47jd" path="res://sound/a-kitchen-timer-55420.mp3" id="2_rir11"]
+[ext_resource type="AudioStream" uid="uid://4nc6f63gpysa" path="res://sound/failure-drum-sound-effect-2-7184.mp3" id="3_n7kf1"]
 
 [node name="DriveTimer" type="Control"]
 layout_mode = 3
@@ -23,5 +25,11 @@ offset_right = 503.0
 offset_bottom = 204.0
 theme_override_font_sizes/normal_font_size = 45
 text = "00:00:00"
+
+[node name="audioTimer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rir11")
+
+[node name="audioLose" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_n7kf1")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

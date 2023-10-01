@@ -1,10 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://dm5d6uvrubi2"]
+[gd_scene load_steps=21 format=3 uid="uid://dm5d6uvrubi2"]
 
 [ext_resource type="ArrayMesh" uid="uid://vspjb01l3sej" path="res://models/stalagtite.obj" id="1_32x7e"]
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_81an1"]
 [ext_resource type="ArrayMesh" uid="uid://snhnlnvppd8s" path="res://models/lava_pool.obj" id="2_eack6"]
 [ext_resource type="PackedScene" uid="uid://dyfrjvxj54dp0" path="res://scenes/car.tscn" id="3_hc4fl"]
 [ext_resource type="PackedScene" uid="uid://dk13en0bbkjqb" path="res://scenes/clown_billboard.tscn" id="4_tbmm1"]
+[ext_resource type="AudioStream" uid="uid://dktdwm8hut2ew" path="res://sound/yay-6326.mp3" id="6_41gma"]
 [ext_resource type="PackedScene" uid="uid://nv0j85y4k0f" path="res://scenes/drive_timer.tscn" id="6_giqob"]
 [ext_resource type="Texture2D" uid="uid://wom3vv1huwl" path="res://graphics/shadow_ui.png" id="7_1ke8p"]
 
@@ -260,6 +261,9 @@ offset_bottom = -12.0
 grow_horizontal = 2
 grow_vertical = 0
 text = "Return to Menu"
+
+[node name="audioWin" type="AudioStreamPlayer" parent="UI"]
+stream = ExtResource("6_41gma")
 
 [node name="OmniLight3D" type="OmniLight3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 41, 0)

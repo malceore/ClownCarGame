@@ -10,6 +10,11 @@ func _process(delta):
 	
 func start():
 	$Timer.start()
-
+	$audioTimer.play()
+func stop():
+	$Timer.stop()
+	$audioTimer.stop()
 func _on_timer_timeout():
 	owner.lose()
+	$audioLose.play()
+	$audioTimer.stop()
