@@ -1,9 +1,9 @@
 extends Node3D
 
 var enabled = true
-# Called when the node enters the scene tree for the first time.
+var rng = RandomNumberGenerator.new()
 func _ready():
-	pass # Replace with function body.
+	$Sprite3D.frame = rng.randf_range(0.0, 3.0)
 
 func disable():
 	enabled = false

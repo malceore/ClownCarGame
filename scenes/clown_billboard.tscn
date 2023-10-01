@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://dk13en0bbkjqb"]
+[gd_scene load_steps=4 format=3 uid="uid://dk13en0bbkjqb"]
 
 [ext_resource type="Script" path="res://scripts/clown_billboard.gd" id="1_4vd16"]
+[ext_resource type="Texture2D" uid="uid://4emccjrbirn8" path="res://graphics/clowns.png" id="2_w4gju"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_cmh0x"]
 size = Vector3(1, 2.5, 1)
@@ -9,4 +10,11 @@ size = Vector3(1, 2.5, 1)
 script = ExtResource("1_4vd16")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+visible = false
 mesh = SubResource("BoxMesh_cmh0x")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 3, 0, 0.769614, 0)
+billboard = 2
+texture = ExtResource("2_w4gju")
+hframes = 4

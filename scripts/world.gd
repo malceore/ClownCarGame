@@ -4,7 +4,14 @@ extends Node3D
 @onready var clownCountText = $UI/ClownCount
 var gameOver = false
 
+func setDifficulty():
+	if Global.currentDifficulty == "Medium":
+		$UI/DriveTimer/Timer.set_wait_time($UI/DriveTimer/Timer.get_wait_time() - 10)
+	elif Global.currentDifficulty == "Hard":
+		$UI/DriveTimer/Timer.set_wait_time($UI/DriveTimer/Timer.get_wait_time() - 20)
+
 func _ready():
+	setDifficulty()
 	$UI/DriveTimer.start()
 
 func _process(delta):
@@ -26,6 +33,7 @@ func win():
 	gameOver = true
 	$UI/Summary/Title.text = "All Clowns Crammed"
 	postSummary()
+	$UI/DriveTimer/Timer.stop()
 
 func lose():
 	gameOver = true
@@ -38,8 +46,8 @@ func postSummary():
 		if !clown.enabled:
 			disabled_clown_count += 1
 	$UI/Summary/Breakdown.text = "Level Breakdown"
-	$UI/Summary/Breakdown.text += "\n    Clowns " + str(disabled_clown_count) + "/" + str(clowns.size())
-	$UI/Summary/Breakdown.text += "\n    Time remaining " + str(floor($UI/DriveTimer/Timer.time_left))
+	$UI/Summary/Breakdown.text += "\n    Clowns: " + str(disabled_clown_count) + "/" + str(clowns.size())
+	$UI/Summary/Breakdown.text += "\n    Time remaining:  " + str(floor($UI/DriveTimer/Timer.time_left))
 	$UI/Summary.visible = true
 	
 func _on_replay_button_pressed():
