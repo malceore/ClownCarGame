@@ -100,6 +100,7 @@ offset_bottom = 629.0
 text = "Lock!"
 
 [node name="AbortButton" type="Button" parent="GUILayer"]
+visible = false
 offset_left = 34.0
 offset_top = 23.0
 offset_right = 42.0

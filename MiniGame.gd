@@ -29,10 +29,10 @@ func newClown():
 	currentClown = clown.instantiate()
 	currentClown.global_position = $ClownSpawn.global_position
 	add_child(currentClown)
+	
 	boot = bootScene.instantiate()
 	boot.global_position = $BootSpawn.global_position
 	add_child(boot)
-	
 	boot.mouse_entered.connect(_on_boot_mouse_entered)
 	boot.mouse_exited.connect(_on_boot_mouse_exited)
 
