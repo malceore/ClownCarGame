@@ -35,6 +35,7 @@ func newClown():
 	add_child(boot)
 	boot.mouse_entered.connect(_on_boot_mouse_entered)
 	boot.mouse_exited.connect(_on_boot_mouse_exited)
+	$Destination.set_monitoring(true)
 
 func bootSlam():
 	var slamVector = currentClown.get_node("physics_torso").global_position - boot.global_position
@@ -62,6 +63,7 @@ func _on_destination_body_exited(body):
 		body.constant_force = Vector2(0,0)
 
 func _on_lock_button_pressed():
+	$Destination.set_monitoring(false)
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
 	$GUILayer/AbortButton.hide()
@@ -69,6 +71,7 @@ func _on_lock_button_pressed():
 	hide()
 
 func _on_abort_button_pressed():
+	$Destination.set_monitoring(false)
 	cheated = true
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
