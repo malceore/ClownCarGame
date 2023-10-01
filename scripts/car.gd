@@ -27,7 +27,6 @@ func _input(event):
 	if event.is_action_pressed("honk"):
 		for clown in get_parent().clowns:
 			if clown.position.distance_to(car_mesh.position) <= honkRange and clown.enabled:
-				print("You can cram!")
 				clown.disable()
 	
 func _process(delta):
@@ -46,7 +45,6 @@ func _process(delta):
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, rotate_input)
 		car_mesh.global_transform.basis = car_mesh.global_transform.basis.slerp(new_basis, turn_speed * delta)
 		car_mesh.global_transform = car_mesh.global_transform.orthonormalized()
-
 	handleArrow()
 		
 func handleArrow():
