@@ -12,12 +12,12 @@ var steering = 21.0
 var turn_stop_limit = 0.75
 var speed_input = 0
 var rotate_input = 0
-
+@export var camera_lerp = 3.0
 
 func _ready():
 	ground_ray.add_exception(ball)
 
-func _physics_process(_delta):
+func _physics_process(delta):
 	# Keep the car mesh aligned with the sphere
 	car_mesh.transform.origin = ball.transform.origin + sphere_offset
 	# Accelerate based on car's forward direction
@@ -39,7 +39,7 @@ func _process(delta):
 	rotate_input = 0
 	rotate_input += Input.get_action_strength("turn_left")
 	rotate_input -= Input.get_action_strength("turn_right")
-	#rotate_input *= deg_2_rad(steering)
+	rotate_input *= deg_to_rad(steering)
 	# rotate car mesh
 	if ball.linear_velocity.length() > turn_stop_limit:
 		var new_basis = car_mesh.global_transform.basis.rotated(car_mesh.global_transform.basis.y, rotate_input)
