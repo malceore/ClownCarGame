@@ -11,10 +11,10 @@ size = Vector2(49.2901, 17.1136)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4s1w1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m6ges"]
-size = Vector2(1162, 37)
+size = Vector2(1162, 111.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_gbvfi"]
-size = Vector2(37, 660)
+size = Vector2(79.5, 771)
 
 [node name="MiniGame" type="Node2D"]
 script = ExtResource("1_sjmgm")
@@ -68,7 +68,7 @@ color = Color(0.980392, 0, 0.45098, 1)
 metadata/_edit_use_anchors_ = true
 
 [node name="BottomWall" type="StaticBody2D" parent="."]
-position = Vector2(580, 679)
+position = Vector2(580, 717)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="BottomWall"]
 position = Vector2(-8, 8.5)
@@ -78,21 +78,21 @@ shape = SubResource("RectangleShape2D_m6ges")
 position = Vector2(579, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopWall"]
-position = Vector2(-11, 117)
+position = Vector2(-11, 79.75)
 shape = SubResource("RectangleShape2D_m6ges")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
-position = Vector2(1152, 355)
+position = Vector2(1160, 354)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(0, 19)
+position = Vector2(21.25, 41.5)
 shape = SubResource("RectangleShape2D_gbvfi")
 
 [node name="StaticBody2D2" type="StaticBody2D" parent="."]
 position = Vector2(1127, 363)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
-position = Vector2(-1143.5, 20)
+position = Vector2(-1171, 33)
 shape = SubResource("RectangleShape2D_gbvfi")
 
 [node name="ClownSpawn" type="Node2D" parent="."]

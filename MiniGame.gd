@@ -53,7 +53,7 @@ func _on_destination_body_entered(body):
 		$Destination/SuccessColor.set_color(Color.GREEN)
 		$GUILayer/LockButton.show()
 		
-		body.constant_force = Vector2(-20,0)
+		body.constant_force = Vector2(-40,0)
 
 func _on_destination_body_exited(body):
 	if(body.owner == currentClown):

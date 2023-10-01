@@ -292,3 +292,6 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -64.3165, 1, -90.5732)
 
 [node name="MiniGame" parent="MiniGameLayer" instance=ExtResource("8_6traw")]
 visible = false
+
+[connection signal="pressed" from="UI/Summary/ReplayButton" to="." method="_on_replay_button_pressed"]
+[connection signal="pressed" from="UI/Summary/ReturnButton" to="." method="_on_return_button_pressed"]
