@@ -106,7 +106,16 @@ position = Vector2(1151, 303)
 position = Vector2(-1152, 20)
 shape = SubResource("RectangleShape2D_gbvfi")
 
+[node name="LockButton" type="Button" parent="."]
+visible = false
+offset_left = 45.0
+offset_top = 598.0
+offset_right = 53.0
+offset_bottom = 606.0
+text = "Lock!"
+
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]
 [connection signal="mouse_entered" from="Boot" to="." method="_on_boot_mouse_entered"]
 [connection signal="mouse_exited" from="Boot" to="." method="_on_boot_mouse_exited"]
+[connection signal="pressed" from="LockButton" to="." method="_on_button_pressed"]
