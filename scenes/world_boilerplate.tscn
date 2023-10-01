@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dc22i48bwtf77"]
+[gd_scene load_steps=12 format=3 uid="uid://dc22i48bwtf77"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_16tgc"]
 [ext_resource type="PackedScene" uid="uid://nv0j85y4k0f" path="res://scenes/drive_timer.tscn" id="2_a8kaf"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://dktdwm8hut2ew" path="res://sound/yay-6326.mp3" id="4_oatae"]
 [ext_resource type="PackedScene" uid="uid://dyfrjvxj54dp0" path="res://scenes/car.tscn" id="5_w7xxr"]
 [ext_resource type="PackedScene" uid="uid://rk6lwtint4ua" path="res://scenes/mini_game.tscn" id="7_gn2ro"]
+[ext_resource type="AudioStream" uid="uid://c63eki7t5uaeu" path="res://sound/ClownTheme.wav" id="7_y5sv4"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_q3xjd"]
 
@@ -169,6 +170,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77434, 0)
 
 [node name="MiniGame" parent="MiniGameLayer" instance=ExtResource("7_gn2ro")]
 visible = false
+
+[node name="audioTheme" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_y5sv4")
 
 [connection signal="pressed" from="UI/Summary/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="UI/Summary/ReturnButton" to="." method="_on_return_button_pressed"]

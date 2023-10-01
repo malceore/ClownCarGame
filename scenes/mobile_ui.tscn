@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dfkst4g6x0dl"]
+[gd_scene load_steps=11 format=3 uid="uid://dfkst4g6x0dl"]
 
 [ext_resource type="Texture2D" uid="uid://c0l5beur10esa" path="res://graphics/mobile_horn_button.png" id="1_qrfof"]
 [ext_resource type="Texture2D" uid="uid://dm6nx8xoyhfch" path="res://graphics/mobile_right.png" id="2_gqug4"]
@@ -6,29 +6,55 @@
 [ext_resource type="Texture2D" uid="uid://bbkfnhip4fv6x" path="res://graphics/mobile_reverse.png" id="4_jwqoc"]
 [ext_resource type="Texture2D" uid="uid://hmntkmknjp2q" path="res://graphics/mobile_forward.png" id="5_fu6ei"]
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_vl1v1"]
+radius = 123.78
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5xr57"]
+radius = 123.78
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7pue8"]
+radius = 123.78
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_sfstt"]
+radius = 123.78
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_gamxj"]
+radius = 123.78
+
 [node name="MobileUI" type="Node2D"]
+modulate = Color(1, 1, 1, 0.560784)
 
 [node name="Action" type="TouchScreenButton" parent="."]
 position = Vector2(884, 502)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("1_qrfof")
+shape = SubResource("CircleShape2D_vl1v1")
+action = "honk"
 
 [node name="Right" type="TouchScreenButton" parent="."]
 position = Vector2(1014, 496)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("2_gqug4")
+shape = SubResource("CircleShape2D_5xr57")
+action = "turn_right"
 
 [node name="Left" type="TouchScreenButton" parent="."]
 position = Vector2(746, 498)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("3_nc1xv")
+shape = SubResource("CircleShape2D_7pue8")
+action = "turn_left"
 
 [node name="Reverse" type="TouchScreenButton" parent="."]
 position = Vector2(0, 504)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("4_jwqoc")
+shape = SubResource("CircleShape2D_sfstt")
+action = "reverse"
 
 [node name="Accelerate" type="TouchScreenButton" parent="."]
 position = Vector2(-2, 364)
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("5_fu6ei")
+shape = SubResource("CircleShape2D_gamxj")
+action = "accelerate"

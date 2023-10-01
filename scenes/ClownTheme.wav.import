@@ -2,13 +2,13 @@
 
 importer="wav"
 type="AudioStreamWAV"
-uid="uid://cpjlob5n3v7h4"
-path="res://.godot/imported/ClownTheme.wav-f357069e8257d69ee417be6a62e8d5db.sample"
+uid="uid://c3dxu3q2psp4a"
+path="res://.godot/imported/ClownTheme.wav-12de174700cf09c61fe1786d73447244.sample"
 
 [deps]
 
-source_file="res://sound/ClownTheme.wav"
-dest_files=["res://.godot/imported/ClownTheme.wav-f357069e8257d69ee417be6a62e8d5db.sample"]
+source_file="res://scenes/ClownTheme.wav"
+dest_files=["res://.godot/imported/ClownTheme.wav-12de174700cf09c61fe1786d73447244.sample"]
 
 [params]
 
