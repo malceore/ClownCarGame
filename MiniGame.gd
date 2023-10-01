@@ -9,14 +9,17 @@ var currentClown
 var boot
 
 func _physics_process(delta):
-	if(Input.is_action_pressed("LeftClick")):
-		if(mouseIsOver):
-			dragging = true
+	if(Input.is_action_pressed("Boot")):
+		bootSlam()
 	else:
-		dragging = false
+		if(Input.is_action_pressed("LeftClick")):
+			if(mouseIsOver):
+				dragging = true
+		else:
+			dragging = false
 	
-	if(dragging):
-		boot.apply_central_force(get_global_mouse_position() - boot.global_position)
+		if(dragging):
+			boot.apply_central_force(get_global_mouse_position() - boot.global_position)
 
 func newClown():
 	currentClown = clown.instantiate()
@@ -30,7 +33,8 @@ func newClown():
 	boot.mouse_exited.connect(_on_boot_mouse_exited)
 
 func bootSlam():
-	pass
+	var slamVector = currentClown.get_node("physics_torso").global_position - boot.global_position
+	boot.apply_impulse(slamVector.normalized() * 1000)
 
 func _on_boot_mouse_entered():
 	mouseIsOver = true
