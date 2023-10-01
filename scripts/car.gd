@@ -14,6 +14,8 @@ var speed_input = 0
 var rotate_input = 0
 @export var camera_lerp = 3.0
 
+var miniGaming = false
+
 func _ready():
 	ground_ray.add_exception(ball)
 
@@ -24,15 +26,18 @@ func _physics_process(delta):
 	ball.apply_central_force(-car_mesh.global_transform.basis.z * speed_input)
 	
 func _input(event):
-	if event.is_action_pressed("honk"):
+	if event.is_action_pressed("honk") and !miniGaming:
 		$audioHonk.play()
 		for clown in get_parent().clowns:
 			if clown.position.distance_to(car_mesh.position) <= honkRange and clown.enabled:
+				miniGaming = true
 				var miniGame = owner.get_node("MiniGameLayer/MiniGame")
 				miniGame.newClown()
 				miniGame.show()
 				await miniGame.visibility_changed
-				clown.disable()
+				if(!miniGame.cheated):
+					clown.disable()
+				miniGaming = false
 				
 	
 func _process(delta):
