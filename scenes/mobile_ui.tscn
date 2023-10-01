@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://dfkst4g6x0dl"]
+
+[ext_resource type="Texture2D" uid="uid://c0l5beur10esa" path="res://graphics/mobile_horn_button.png" id="1_qrfof"]
+[ext_resource type="Texture2D" uid="uid://dm6nx8xoyhfch" path="res://graphics/mobile_right.png" id="2_gqug4"]
+[ext_resource type="Texture2D" uid="uid://dtaocyo344s78" path="res://graphics/mobile_left.png" id="3_nc1xv"]
+[ext_resource type="Texture2D" uid="uid://bbkfnhip4fv6x" path="res://graphics/mobile_reverse.png" id="4_jwqoc"]
+[ext_resource type="Texture2D" uid="uid://hmntkmknjp2q" path="res://graphics/mobile_forward.png" id="5_fu6ei"]
+
+[node name="MobileUI" type="Node2D"]
+
+[node name="Action" type="TouchScreenButton" parent="."]
+position = Vector2(884, 502)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("1_qrfof")
+
+[node name="Right" type="TouchScreenButton" parent="."]
+position = Vector2(1014, 496)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("2_gqug4")
+
+[node name="Left" type="TouchScreenButton" parent="."]
+position = Vector2(746, 498)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("3_nc1xv")
+
+[node name="Reverse" type="TouchScreenButton" parent="."]
+position = Vector2(0, 504)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("4_jwqoc")
+
+[node name="Accelerate" type="TouchScreenButton" parent="."]
+position = Vector2(-2, 364)
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_fu6ei")
