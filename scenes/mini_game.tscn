@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://rk6lwtint4ua"]
+[gd_scene load_steps=7 format=3 uid="uid://rk6lwtint4ua"]
 
 [ext_resource type="Script" path="res://MiniGame.gd" id="1_sjmgm"]
+[ext_resource type="PackedScene" uid="uid://gbcy2nmivk1r" path="res://scenes/clown_skeleton.tscn" id="2_77q5t"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_q7p7e"]
 
@@ -65,6 +66,8 @@ offset_top = -20.0
 offset_right = 21.0
 offset_bottom = 20.0
 color = Color(0.980392, 0, 0.45098, 1)
+
+[node name="ClownSkeleton" parent="Clown" instance=ExtResource("2_77q5t")]
 
 [connection signal="body_entered" from="Destination" to="." method="_on_destination_body_entered"]
 [connection signal="body_exited" from="Destination" to="." method="_on_destination_body_exited"]

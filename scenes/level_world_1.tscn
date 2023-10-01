@@ -3,6 +3,7 @@
 [sub_resource type="PlaneMesh" id="PlaneMesh_5iml5"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_l767x"]
+size = Vector3(600, 5, 600)
 
 [node name="levelWorld1" type="Node3D"]
 
@@ -15,3 +16,5 @@ skeleton = NodePath("../..")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="ground"]
 shape = SubResource("BoxShape3D_l767x")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
