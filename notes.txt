@@ -46,7 +46,7 @@ export as .obj
 ===Day three work===
 --------------------
 
-    Mechanics
+	Mechanics
 	before mission starts it explains the controls, 
 		you must close the menu to start playing.
 	Make mini game spawn when you press honk by clown.
@@ -55,7 +55,7 @@ export as .obj
 	Fix mission replay on new levels.
 	add physics boot 
 
-    Content
+	Content
 	Level 1
 		models placed.
 		car and gui placed.
@@ -72,7 +72,7 @@ export as .obj
 	car model
 	texture buildings and tree		
 
-    Sound
+	Sound
 	Cheering when you win.
 	Sad trombone when you lose.
 	Honk noise on car.

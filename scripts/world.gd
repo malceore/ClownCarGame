@@ -29,11 +29,13 @@ func isVictory():
 			return false
 	return true
 	
+	
 func win():
 	gameOver = true
 	$UI/Summary/Title.text = "All Clowns Crammed"
 	postSummary()
-	$UI/DriveTimer/Timer.stop()
+	$UI/DriveTimer.stop()
+	$UI/audioWin.play()
 
 func lose():
 	gameOver = true

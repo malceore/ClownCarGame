@@ -128,5 +128,7 @@ grow_horizontal = 2
 grow_vertical = 0
 text = "Return to Menu"
 
+[node name="audioWin" type="AudioStreamPlayer" parent="UI"]
+
 [connection signal="pressed" from="UI/Summary/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="UI/Summary/ReturnButton" to="." method="_on_return_button_pressed"]
