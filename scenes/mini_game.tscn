@@ -111,6 +111,7 @@ theme_override_font_sizes/font_size = 45
 text = "Shut door"
 
 [node name="AbortButton" type="Button" parent="GUILayer"]
+visible = false
 offset_left = 929.0
 offset_top = 550.0
 offset_right = 1143.0
