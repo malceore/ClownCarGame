@@ -124,9 +124,10 @@ text = "ABORT!"
 offset_left = 7.0
 offset_top = 2.0
 offset_right = 1030.0
-offset_bottom = 85.0
+offset_bottom = 109.0
 theme_override_font_sizes/normal_font_size = 40
-text = "Cram the clown into your car with your boot."
+text = "Cram the clown into your car with your boot.
+Left-click to drag boot, right-click to kick clown."
 
 [node name="audioSlam" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("3_v5cjb")

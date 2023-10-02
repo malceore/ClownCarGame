@@ -89,6 +89,19 @@ offset_bottom = 78.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Clowns  0/8"
 
+[node name="InstructionsTimer" type="Timer" parent="UI"]
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="DrivingInstructions" type="RichTextLabel" parent="UI"]
+offset_left = 328.0
+offset_top = 468.0
+offset_right = 830.0
+offset_bottom = 588.0
+theme_override_font_sizes/normal_font_size = 40
+text = "WASD to move, Spacebar to pick up clowns"
+
 [node name="Summary" type="TextureRect" parent="UI"]
 visible = false
 anchors_preset = 8
@@ -177,5 +190,6 @@ stream = ExtResource("7_y5sv4")
 [node name="Camera3D" type="Camera3D" parent="."]
 current = true
 
+[connection signal="timeout" from="UI/InstructionsTimer" to="." method="_on_timer_timeout"]
 [connection signal="pressed" from="UI/Summary/ReplayButton" to="." method="_on_replay_button_pressed"]
 [connection signal="pressed" from="UI/Summary/ReturnButton" to="." method="_on_return_button_pressed"]
