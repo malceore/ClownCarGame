@@ -69,6 +69,7 @@ func _on_lock_button_pressed():
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
 	$GUILayer/AbortButton.hide()
+	currentClown.get_node("torso").linear_damp = 25
 	currentClown = null
 	boot.queue_free()
 	hide()
