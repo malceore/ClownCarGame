@@ -37,7 +37,7 @@ keep_aspect = 0
 current = true
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
-gravity_scale = 10.0
+gravity_scale = 4.5
 angular_damp = 5.0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="RigidBody3D"]
