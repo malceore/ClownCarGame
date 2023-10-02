@@ -89,3 +89,12 @@ polish
 	camera has lerp follow
 	car tips when you turn fast
 
+Kokoro Notes:
+	Need more time on Easy
+	Speed up car when you are going straight
+	Make honk zone bigger so I don't have to run over clown
+	mobile controle in main menue
+	spinning boot of doom
+	instructions in general
+	turn dampening down once in car
+	lerp camera

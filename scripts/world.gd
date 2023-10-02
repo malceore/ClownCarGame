@@ -4,6 +4,8 @@ extends Node3D
 @onready var clownCountText = $UI/ClownCount
 var gameOver = false
 
+@export var followSpeed = 8
+
 func setDifficulty():
 	if Global.currentDifficulty == "Medium":
 		$UI/DriveTimer/Timer.set_wait_time($UI/DriveTimer/Timer.get_wait_time() - 10)
@@ -23,7 +25,11 @@ func _process(delta):
 	clownCountText.text = "Clowns " + str(disabled_clown_count) + "/" + str(clowns.size())
 	if !gameOver and isVictory():
 		win()
-		
+
+func _physics_process(delta):
+	# lerp camera position
+	$Camera3D.global_transform = $Camera3D.global_transform.interpolate_with($Car/Mesh/Camera3D.global_transform, delta * followSpeed)
+
 func isVictory():
 	for clown in clowns:
 		if clown.enabled:

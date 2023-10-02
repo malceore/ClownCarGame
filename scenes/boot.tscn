@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dby4sndt4djk7"]
 
-[ext_resource type="Texture2D" uid="uid://bj67c8daoctam" path="res://graphics/boot.png" id="1_pp3b0"]
+[ext_resource type="Texture2D" uid="uid://7x6tvuts5mdh" path="res://graphics/boot.png" id="1_pp3b0"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l82jl"]
 size = Vector2(46, 70)
@@ -10,6 +10,7 @@ position = Vector2(976, 389)
 input_pickable = true
 inertia = 1000.0
 gravity_scale = 0.0
+lock_rotation = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 visible = false
