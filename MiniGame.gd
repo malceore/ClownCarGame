@@ -50,29 +50,30 @@ func _on_boot_mouse_exited():
 
 func _on_destination_body_entered(body):
 	if(body.owner == currentClown):
-		$Destination/SuccessColor.set_color(Color.GREEN)
-		$GUILayer/LockButton.show()
-		
 		body.constant_force = Vector2(-80,0)
+		
+		if(body.name == "torso"):
+			$Destination/SuccessColor.set_color(Color.GREEN)
+			$GUILayer/LockButton.show()
 
 func _on_destination_body_exited(body):
 	if(body.owner == currentClown):
-		$Destination/SuccessColor.set_color(Color.RED)
-		$GUILayer/LockButton.hide()
-		
 		body.constant_force = Vector2(0,0)
+		
+		if(body.name == "torso"):
+			$Destination/SuccessColor.set_color(Color.RED)
+			$GUILayer/LockButton.hide()
 
 func _on_lock_button_pressed():
 	$audioSlam.play()
-	$Destination.set_monitoring(false)
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
 	$GUILayer/AbortButton.hide()
+	currentClown = null
 	boot.queue_free()
 	hide()
 
 func _on_abort_button_pressed():
-	$Destination.set_monitoring(false)
 	cheated = true
 	$Destination/SuccessColor.set_color(Color.RED)
 	$GUILayer/LockButton.hide()
