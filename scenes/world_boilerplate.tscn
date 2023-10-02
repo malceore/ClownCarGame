@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dc22i48bwtf77"]
+[gd_scene load_steps=13 format=3 uid="uid://dc22i48bwtf77"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_16tgc"]
 [ext_resource type="PackedScene" uid="uid://nv0j85y4k0f" path="res://scenes/drive_timer.tscn" id="2_a8kaf"]
 [ext_resource type="Texture2D" uid="uid://wom3vv1huwl" path="res://graphics/shadow_ui.png" id="3_322s4"]
 [ext_resource type="AudioStream" uid="uid://dktdwm8hut2ew" path="res://sound/yay-6326.mp3" id="4_oatae"]
+[ext_resource type="PackedScene" uid="uid://dfkst4g6x0dl" path="res://scenes/mobile_ui.tscn" id="5_riq4d"]
 [ext_resource type="PackedScene" uid="uid://dyfrjvxj54dp0" path="res://scenes/car.tscn" id="5_w7xxr"]
 [ext_resource type="PackedScene" uid="uid://rk6lwtint4ua" path="res://scenes/mini_game.tscn" id="7_gn2ro"]
 [ext_resource type="AudioStream" uid="uid://yhporksnwqje" path="res://sound/ClownTheme.wav" id="7_y5sv4"]
@@ -80,12 +81,13 @@ shape = SubResource("BoxShape3D_b1cdk")
 [node name="UI" type="CanvasLayer" parent="."]
 
 [node name="DriveTimer" parent="UI" instance=ExtResource("2_a8kaf")]
+time = 90
 
 [node name="ClownCount" type="RichTextLabel" parent="UI"]
-offset_left = 899.0
-offset_top = 16.0
-offset_right = 1176.0
-offset_bottom = 78.0
+offset_left = 919.0
+offset_top = 4.0
+offset_right = 1196.0
+offset_bottom = 66.0
 theme_override_font_sizes/normal_font_size = 40
 text = "Clowns  0/8"
 
@@ -95,11 +97,11 @@ one_shot = true
 autostart = true
 
 [node name="DrivingInstructions" type="RichTextLabel" parent="UI"]
-offset_left = 328.0
-offset_top = 468.0
-offset_right = 830.0
-offset_bottom = 588.0
-theme_override_font_sizes/normal_font_size = 40
+offset_left = 182.0
+offset_top = 552.0
+offset_right = 684.0
+offset_bottom = 672.0
+theme_override_font_sizes/normal_font_size = 30
 text = "WASD to move, Spacebar to pick up clowns"
 
 [node name="Summary" type="TextureRect" parent="UI"]
@@ -175,6 +177,9 @@ text = "Return to Menu"
 
 [node name="audioWin" type="AudioStreamPlayer" parent="UI"]
 stream = ExtResource("4_oatae")
+
+[node name="MobileUI" parent="UI" instance=ExtResource("5_riq4d")]
+visible = false
 
 [node name="Car" parent="." instance=ExtResource("5_w7xxr")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77434, 0)

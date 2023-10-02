@@ -12,8 +12,13 @@ func setDifficulty():
 	elif Global.currentDifficulty == "Hard":
 		$UI/DriveTimer/Timer.set_wait_time($UI/DriveTimer/Timer.get_wait_time() - 20)
 
+func setMobileControls():
+	if Global.mobileControls == "On":
+		$UI/MobileUI.visible = true
+
 func _ready():
 	setDifficulty()
+	setMobileControls()
 	$UI/DriveTimer.start()
 	$audioTheme.play()
 

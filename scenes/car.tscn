@@ -21,13 +21,6 @@ mesh = ExtResource("2_5r3he")
 
 [node name="RayCast3D" type="RayCast3D" parent="Mesh"]
 
-[node name="Offset" type="Node3D" parent="Mesh"]
-transform = Transform3D(0.75, 0, 0, 0, 0.75, 0, 0, 0, 0.75, 0, 1.70244, 0)
-
-[node name="Arrow" type="Sprite3D" parent="Mesh/Offset"]
-transform = Transform3D(0.0228618, -0.00814852, 0.999705, -0.999739, -0.000186339, 0.0228611, 0, -0.999967, -0.00815065, 0, 7.73918, 0)
-texture = ExtResource("3_dyudl")
-
 [node name="Node3D" type="Node3D" parent="Mesh"]
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 4, 6)
 
@@ -35,6 +28,14 @@ transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 
 transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 6.50755, 12.6784)
 keep_aspect = 0
 current = true
+
+[node name="Offset" type="Node3D" parent="Mesh/Camera3D"]
+transform = Transform3D(2, 0, 0, 0, 1.93185, -0.517638, 0, 0.517638, 1.93185, 0, -1.35997, -13.49)
+
+[node name="Arrow" type="Sprite3D" parent="Mesh/Camera3D/Offset"]
+transform = Transform3D(0.0228618, -0.00814852, 0.999705, -0.999739, -0.000186344, 0.0228611, 0, -0.999967, -0.00815065, 0, 4.88223, 0.0336374)
+modulate = Color(0.992157, 0, 0.329412, 1)
+texture = ExtResource("3_dyudl")
 
 [node name="RigidBody3D" type="RigidBody3D" parent="."]
 gravity_scale = 4.5

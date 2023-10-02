@@ -90,10 +90,10 @@ polish
 	car tips when you turn fast
 
 Kokoro Notes:
-	Need more time on Easy
+	\- Need more time on Easy
 	Speed up car when you are going straight                - done
 	Make honk zone bigger so I don't have to run over clown - done
-	mobile controle in main menue
+	\- mobile controle in main menue
 	spinning boot of doom                                   - done
 	instructions in general                                 - semi-done
 	turn dampening down once in car                         - done

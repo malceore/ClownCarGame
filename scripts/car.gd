@@ -63,6 +63,6 @@ func handleArrow():
 	for clown in get_parent().clowns:
 		if clown.position.distance_to(car_mesh.position) <= closestClown.position.distance_to(car_mesh.position) and clown.enabled:
 			closestClown = clown
-	$Mesh/Offset.look_at(closestClown.position)
+	$Mesh/Camera3D/Offset.look_at(closestClown.position)
 	
 			

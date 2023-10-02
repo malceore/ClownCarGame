@@ -67,22 +67,6 @@ grow_vertical = 2
 theme_override_font_sizes/font_size = 22
 text = "Level 2"
 
-[node name="Level 3" type="Button" parent="Menu"]
-layout_mode = 1
-anchors_preset = 6
-anchor_left = 1.0
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_left = -299.0
-offset_top = 152.5
-offset_right = -123.0
-offset_bottom = 219.5
-grow_horizontal = 0
-grow_vertical = 2
-theme_override_font_sizes/font_size = 22
-text = "Level 3"
-
 [node name="Difficulty" type="Button" parent="Menu"]
 layout_mode = 0
 offset_left = 307.0
@@ -115,14 +99,14 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -384.5
-offset_top = 92.5
-offset_right = 123.5
-offset_bottom = 222.5
+offset_left = -412.5
+offset_top = 215.5
+offset_right = 479.5
+offset_bottom = 345.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 30
-text = "Pick up all the clowns in time for the Circus!"
+text = "Instructions: Pick up all the clowns in your clown car in time for the Circus!"
 
 [node name="LevelLabel" type="RichTextLabel" parent="Menu"]
 layout_mode = 1
@@ -140,7 +124,31 @@ grow_vertical = 2
 theme_override_font_sizes/normal_font_size = 30
 text = "Level:"
 
+[node name="MobileControlsLabel" type="RichTextLabel" parent="Menu"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -402.5
+offset_top = 89.5
+offset_right = -237.5
+offset_bottom = 184.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 30
+text = "Mobile Controls:"
+
+[node name="ToggleMobileControls" type="Button" parent="Menu"]
+offset_left = 307.0
+offset_top = 378.0
+offset_right = 483.0
+offset_bottom = 445.0
+theme_override_font_sizes/font_size = 22
+text = "Off"
+
 [connection signal="pressed" from="Menu/Level 1" to="." method="_on_level_1_pressed"]
 [connection signal="pressed" from="Menu/Level 2" to="." method="_on_level_2_pressed"]
-[connection signal="pressed" from="Menu/Level 3" to="." method="_on_level_3_pressed"]
 [connection signal="pressed" from="Menu/Difficulty" to="." method="_on_difficulty_pressed"]
+[connection signal="pressed" from="Menu/ToggleMobileControls" to="." method="_on_toggle_mobile_controls_pressed"]
