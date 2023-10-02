@@ -94,7 +94,7 @@ Kokoro Notes:
 	Speed up car when you are going straight
 	Make honk zone bigger so I don't have to run over clown
 	mobile controle in main menue
-	spinning boot of doom
+	spinning boot of doom - fixed
 	instructions in general
-	turn dampening down once in car
-	lerp camera
+	turn dampening down once in car - done
+	lerp camera - done

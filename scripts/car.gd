@@ -6,7 +6,7 @@ extends Node3D
 
 @export var turn_speed = 5
 @export var acceleration = 70
-@export var honkRange = 6
+@export var honkRange = 9
 var sphere_offset = Vector3(0, -1.0, 0)
 var steering = 21.0
 var turn_stop_limit = 0.75
