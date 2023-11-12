@@ -31,6 +31,7 @@ jobs:
           godot_export_templates_download_url: https://downloads.tuxfamily.org/godotengine/4.1/mono/Godot_v4.1-stable_mono_export_templates.tpz
           relative_project_path: ./
           archive_export_output: true
-        env: GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        env: 
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           
 
