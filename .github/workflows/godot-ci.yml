@@ -1,9 +1,14 @@
 name: "godot-ci export"
 on: push
 
+
 env:
   GODOT_VERSION: 4.0.3
   EXPORT_NAME: test-project
+  ITCHIO_USERNAME: ${{ vars.ITCHIO_USERNAME }}
+  ITCHIO_GAME: ${{ vars.ITCHIO_GAME }}
+  BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
+  
   
 jobs:
   export-web:
@@ -24,6 +29,7 @@ jobs:
         run: |
           mkdir -v -p build/web
           godot --headless -v --export-release "Web" ../build/web/index.html
+          ls ../build/web/
       - name: Upload Artifact to Itch with Butler
         run: | 
           wget -O butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
