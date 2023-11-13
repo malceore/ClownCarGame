@@ -141,6 +141,7 @@ theme_override_font_sizes/normal_font_size = 30
 text = "Mobile Controls:"
 
 [node name="ToggleMobileControls" type="Button" parent="Menu"]
+layout_mode = 0
 offset_left = 307.0
 offset_top = 378.0
 offset_right = 483.0
