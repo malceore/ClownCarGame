@@ -31,4 +31,4 @@ jobs:
           wget -O butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
           unzip butler.zip
           chmod +x butler
-          ./butler push ./build/web $ITCHIO_USERNAME/$ITCHIO_GAME:web
+          ./butler push ${{ github.workspace }}/${{ steps.build.outputs.build }} $ITCHIO_USERNAME/$ITCHIO_GAME:${{ matrix.platform }}
