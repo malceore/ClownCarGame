@@ -9,11 +9,11 @@ env:
   BUTLER_API_KEY: ${{ secrets.BUTLER_API_KEY }}
   
 jobs:
-  Godot:
+  Build:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        platform: [Linux, Windows_Desktop, Web]
+        platform: [Linux]
     steps:
       - uses: actions/checkout@v2
         with:
@@ -25,8 +25,10 @@ jobs:
           name: example
           preset: ${{ matrix.platform }}
           debugMode: "true"
-      - name: Upload Artifact
-        uses: actions/upload-artifact@v2
-        with:
-          name: Client - ${{ matrix.platform }}
-          path: ${{ github.workspace }}/${{ steps.build.outputs.build }}
+      - name: Upload Artifact to Itch with Butler
+        id: release
+        run: | 
+          wget -O butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          chmod +x butler
+          butler push ./build/web $ITCHIO_USERNAME/$ITCHIO_GAME:web
